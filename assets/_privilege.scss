@@ -1,0 +1,246 @@
+.privilege {
+  margin-top: 83px;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__header {
+    text-transform: uppercase;
+    font-size: 105px;
+    font-weight: 900;
+    color: $color-white;
+    line-height: 123px;
+
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+
+    span {
+      color: $color-text;
+    }
+  }
+
+  &__title {
+    margin-top: 83px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-transform: uppercase;
+  }
+
+  &__sub_title,
+  &__sup_title {
+    font-weight: 900;
+  }
+
+  &__sub_title {
+    line-height: 56px;
+  }
+
+  &__sup_title {
+    font-size: 72px;
+    line-height: 84px;
+
+    margin-top: 20px;
+
+    color: $color-white;
+  }
+
+  &__ending {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    width: 100%;
+    margin-top: 210px;
+  }
+
+  &__text {
+    font-weight: bold;
+    line-height: 42px;
+  }
+
+  &__count {
+    font-size: 72px;
+    font-weight: 900;
+    line-height: 84px;
+    color: $color-text;
+    margin-left: 130px;
+
+    span {
+      color: $color-white;
+    }
+  }
+
+  .privileges,
+  &__title,
+  &__ending {
+    max-width: 1040px;
+  }
+
+  .privileges {
+    margin-top: 160px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    &__item {
+      display: flex;
+      justify-content: flex-start;
+      margin-top: 190px;
+
+      &:first-child {
+        margin-top: 0;
+      }
+
+      &:nth-child(2) {
+        justify-content: flex-end;
+      }
+    }
+
+    &__text {
+      max-width: 390px;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+    }
+
+    &__description {
+      margin-top: 30px;
+      font-size: 24px;
+      line-height: 26px;
+
+      p {
+        margin-top: 15px;
+        &:first-child {
+          margin: 0;
+        }
+      }
+    }
+
+    &__picture {
+      width: 410px;
+      margin-left: 100px;
+
+      &:nth-child(1) {
+        margin-right: 100px;
+      }
+    }
+  }
+}
+
+#one-money {
+  // animation: ease-in-out 2s infinite coin-two;
+  will-change: transform;
+}
+
+#two-money {
+  // animation: 2s ease-in-out 1s infinite coin-two;
+  // will-change: transform;
+}
+
+#card {
+  // animation: 2s ease-in-out 1s infinite card;
+  // will-change: transform;
+}
+
+#shadow {
+  // animation: 2s ease-in-out 1s infinite shadow-anim;
+  transform-origin: center;
+  transform-box: fill-box;
+  // will-change: transform;
+}
+
+@keyframes coin {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-60px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes coin-two {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-35px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes card {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-35px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes shadow-anim {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.85);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.darken {
+  .privilege {
+    &__header {
+      color: $color-text;
+
+      span {
+        color: $color-white;
+      }
+    }
+
+    &__sub_title {
+      color: $color-white;
+    }
+
+    &__sup_title {
+      color: $color-text;
+    }
+
+    .privileges {
+      &__title {
+        color: $color-white;
+      }
+
+      &__description {
+        color: $color-white;
+      }
+    }
+
+    &__text {
+      color: $color-white;
+    }
+
+    &__count {
+      color: $color-white;
+      span {
+        color: $color-text;
+      }
+    }
+  }
+}

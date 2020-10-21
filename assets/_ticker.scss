@@ -1,0 +1,32 @@
+.ticker {
+  margin-top: 45px;
+
+  &__text {
+    z-index: -3;
+    height: 96px;
+    background: repeat-x url('/assets/pictures/rollText.svg') center / contain;
+    background-size: 1452px 96px;
+    background-position: 0px 0px;
+    // animation: marquee 8s linear infinite reverse;
+  }
+}
+
+.darken {
+  .ticker {
+    background-color: $color-darken;
+    &__text {
+      background: repeat-x url('/assets/pictures/rollTextDarken.svg') center / contain;
+      background-size: 1452px 96px;
+      background-position: 0px 0px;
+    }
+  }
+}
+
+@keyframes marquee {
+  0% {
+    background-position: 0px 0px;
+  }
+  100% {
+    background-position: 1452px 0;
+  }
+}

@@ -1,0 +1,104 @@
+.promo {
+  margin-top: 190px;
+
+  &__wrapper {
+    max-width: 1000px;
+    text-transform: uppercase;
+    margin: 0 auto;
+  }
+
+  &__text {
+    font-weight: 900;
+    font-size: 105px;
+    line-height: 123px;
+    color: $color-white;
+    letter-spacing: 1px; // delete this after added -webkit-text-stroke: ;
+
+    span {
+      color: $color-text;
+      position: relative;
+
+      span {
+        z-index: -1;
+        left: 0;
+        top: -1.5%;
+        position: absolute;
+        color: $color-white;
+      }
+    }
+  }
+
+  &__controls {
+    width: 70%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__play-btn {
+    position: relative;
+
+    &-after,
+    &-before {
+      width: 180px;
+      height: 180px;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    &-after {
+      background-image: url('/assets/pictures/PB-before.png');
+    }
+
+    &-before {
+      z-index: -1;
+      position: absolute;
+      left: 0;
+      top: 0;
+
+      background-image: url('/assets//pictures/PB.svg');
+      animation: spin linear infinite 5s;
+    }
+  }
+
+  &__buy-btn {
+    margin-left: 25%;
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.darken {
+  .promo {
+    &__wrapper {
+      z-index: 1;
+      position: relative;
+    }
+
+    &__text {
+      color: $color-text;
+      span > span {
+        color: $color-white;
+        z-index: 0;
+        top: 6.5%;
+      }
+    }
+
+    &__play-btn {
+      &-after {
+        background-image: url('/assets//pictures/PB-darken.svg');
+      }
+
+      &-before {
+        background-image: url('/assets/pictures/PB-before-darken.png');
+      }
+    }
+  }
+}

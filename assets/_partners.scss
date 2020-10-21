@@ -1,0 +1,241 @@
+.partners {
+  margin-top: 165px;
+
+  &__wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+
+  &__title {
+    text-transform: uppercase;
+  }
+
+  &__companys {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin: 85px auto 0 auto;
+  }
+
+  &__company-container {
+    width: 21%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    &:nth-child(n + 5) {
+      margin-top: 95px;
+    }
+  }
+
+  &__row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__company {
+    &:nth-child(2n) {
+      margin-top: 5%;
+    }
+  }
+
+  &__more-btn {
+    margin-top: 10%;
+    text-transform: uppercase;
+    font-size: 24px;
+    font-weight: 900;
+    color: $color-text;
+    line-height: 28px;
+    text-align: center;
+
+    span {
+      position: relative;
+      &:hover {
+        cursor: pointer;
+        &:before,
+        &:after {
+          width: 100%;
+        }
+      }
+
+      &:before,
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        width: 15%;
+        height: 5px;
+        left: 0;
+        opacity: 0.2;
+        transition: all 0.2s ease-in-out;
+        transition-duration: 0.75s;
+        background-color: $color-main;
+      }
+    }
+
+    &.disabled {
+      span {
+        pointer-events: none;
+      }
+    }
+  }
+
+  /// logotypes
+  &__c1,
+  &__c2,
+  &__c3,
+  &__c4,
+  &__c5,
+  &__c6,
+  &__c7,
+  &__c8 {
+    width: 10rem;
+    height: 10rem;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+    transition: all ease 0.2s;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__c4,
+  &__c8 {
+    background-size: inherit;
+  }
+
+  &__c1 {
+    background-image: url('/assets/pictures/companys/Зоодисконт\ лого.svg');
+    &:hover {
+      background-image: url('/assets/pictures/companys/active/Зоодисконт\ цвет\ цовер.svg');
+    }
+  }
+
+  &__c2 {
+    background-image: url('/assets/pictures/companys/Кадровый.svg');
+    &:hover {
+      background-image: url('/assets/pictures/companys/active/КЦ\ Цвет\ ховер.svg');
+    }
+  }
+
+  &__c3 {
+    background-image: url('/assets/pictures/companys/Ноль\ Один.svg');
+    &:hover {
+      background-image: url('/assets/pictures/companys/active/01\ цвет\ ховер.svg');
+    }
+  }
+
+  &__c4 {
+    background-image: url('/assets/pictures/companys/Начинка.svg');
+    &:hover {
+      background-image: url('/assets/pictures/companys/active/Начинка\ цвет\ ховер.svg');
+    }
+  }
+
+  &__c5 {
+    background-image: url('/assets/pictures/companys/Зооиндустрия\ лого.svg');
+    &:hover {
+      background-image: url('/assets/pictures/companys/active/Индустрия\ цвет\ ховер.svg');
+    }
+  }
+
+  &__c6 {
+    background-image: url('/assets/pictures/companys/Колхоз.svg');
+    &:hover {
+      background-image: url('/assets/pictures/companys/active/Колхоз\ цвет\ ховер.svg');
+    }
+  }
+
+  &__c7 {
+    background-image: url('/assets/pictures/companys/ЗооОпт.svg');
+    &:hover {
+      background-image: url('/assets/pictures/companys/active/Зооопт\ цвет\ ховер.svg');
+    }
+  }
+
+  &__c8 {
+    background-image: url('/assets/pictures/companys/Корм\ на\ дом.svg');
+    &:hover {
+      background-image: url('/assets/pictures/companys/active/Корм\ цвет\ ховер.svg');
+    }
+  }
+}
+
+.darken {
+  .partners {
+    &__title {
+      color: $color-white;
+    }
+
+    &__more-btn {
+      span {
+        color: $color-white;
+      }
+    }
+
+    &__c1 {
+      background-image: url('/assets/pictures/companys/ЗоодисконтЛого-darken.svg');
+      &:hover {
+        background-image: url('/assets/pictures/companys/active/Зоодисконт\ цвет\ цовер.svg');
+      }
+    }
+
+    &__c2 {
+      background-image: url('/assets/pictures/companys/Кадровый-darken.svg');
+      &:hover {
+        background-image: url('/assets/pictures/companys/active/КЦ\ Цвет\ ховер.svg');
+      }
+    }
+
+    &__c3 {
+      background-image: url('/assets/pictures/companys/Ноль\ Один-darken.svg');
+      &:hover {
+        background-image: url('/assets/pictures/companys/active/01\ цвет\ ховер.svg');
+      }
+    }
+
+    &__c4 {
+      background-image: url('/assets/pictures/companys/Начинка-darken.svg');
+      &:hover {
+        background-image: url('/assets/pictures/companys/active/Начинка\ цвет\ ховер.svg');
+      }
+    }
+
+    &__c5 {
+      background-image: url('/assets/pictures/companys/Зооиндустрия\ лого-darken.svg');
+      &:hover {
+        background-image: url('/assets/pictures/companys/active/Индустрия\ цвет\ ховер.svg');
+      }
+    }
+
+    &__c6 {
+      background-image: url('/assets/pictures/companys/Колхоз-darken.svg');
+      &:hover {
+        background-image: url('/assets/pictures/companys/active/Колхоз\ цвет\ ховер.svg');
+      }
+    }
+
+    &__c7 {
+      background-image: url('/assets/pictures/companys/ЗооОпт-darken.svg');
+      &:hover {
+        background-image: url('/assets/pictures/companys/active/Зооопт\ цвет\ ховер.svg');
+      }
+    }
+
+    &__c8 {
+      background-image: url('/assets/pictures/companys/Корм\ на\ дом-darken.svg');
+      &:hover {
+        background-image: url('/assets/pictures/companys/active/Корм\ цвет\ ховер.svg');
+      }
+    }
+  }
+}

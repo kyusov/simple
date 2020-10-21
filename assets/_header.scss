@@ -1,0 +1,56 @@
+$menu-btn-width: 64px;
+$menu-btn-height: 64px;
+
+.header {
+  &__wrapper {
+    width: 100%;
+    max-width: 1165px;
+    margin: 0 auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  &__logo {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &__menu-btn {
+    text-transform: uppercase;
+    background-color: $color-text;
+
+    font-size: 14px;
+    font-weight: 900;
+    line-height: 16px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #fefefe;
+
+    border-radius: 50%;
+    border: 1px solid #000000;
+
+    width: $menu-btn-width;
+    height: $menu-btn-height;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.darken {
+  .header {
+    background-color: $color-darken;
+    &__menu-btn {
+      background-color: $color-white;
+      color: $color-darken;
+      border: none;
+    }
+  }
+}

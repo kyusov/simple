@@ -1,0 +1,32 @@
+.elastic {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .white,
+  .darken {
+    width: 100%;
+  }
+
+  .white {
+    z-index: 2;
+    position: relative;
+    // clip-path: url('#clip');
+  }
+
+  .darken {
+    z-index: 1;
+    position: absolute;
+  }
+
+  .svg-slider {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 4;
+    path {
+      fill: #c2212156;
+    }
+  }
+}

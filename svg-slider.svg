@@ -1,0 +1,6 @@
+<svg fill="none"
+    xmlns="http://www.w3.org/2000/svg">
+    <clipPath id="clip">
+        <path d="M70 0H150V1076H70V736C70 644 0 595 0 538C0 481 70 440 70 340V0Z" fill="#C4C4C4"/>
+    </clipPath>
+</svg>
