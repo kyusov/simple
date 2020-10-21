@@ -586,11 +586,11 @@
 }
 
 .partners__c1 {
-  background-image: url("./pictures/companys/Зоодисконт лого.svg");
+  background-image: url("../pictures/companys/Зоодисконт лого.svg");
 }
 
 .partners__c1:hover {
-  background-image: url("pictures/companys/active/Зоодисконт цвет цовер.svg");
+  background-image: url("../pictures/companys/active/Зоодисконт цвет цовер.svg");
 }
 
 .partners__c2 {
