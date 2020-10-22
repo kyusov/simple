@@ -867,7 +867,7 @@
 .contacts__custumer-form button[type='submit']:before {
   content: '';
   position: absolute;
-  background: url("/assets/pictures/send.svg") center;
+  background: url("../pictures/send.svg") center;
   background-repeat: no-repeat;
   right: 21px;
   width: 21px;
