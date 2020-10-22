@@ -47,7 +47,7 @@
     }
 
     &-after {
-      background-image: url('/assets/pictures/PB-before.png');
+      background-image: url('../pictures/PB-before.png');
     }
 
     &-before {
@@ -56,7 +56,7 @@
       left: 0;
       top: 0;
 
-      background-image: url('/assets//pictures/PB.svg');
+      background-image: url('../pictures/PB.svg');
       animation: spin linear infinite 5s;
     }
   }
