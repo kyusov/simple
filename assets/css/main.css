@@ -914,7 +914,7 @@
 .contacts__checkbox_wrapper input[type='checkbox']:checked + label::before {
   border-color: #fdc300;
   background-color: #fdc300;
-  background-image: url("/assets/pictures/check.svg");
+  background-image: url("../pictures/check.svg");
 }
 
 .contacts__submit_wrapper {
