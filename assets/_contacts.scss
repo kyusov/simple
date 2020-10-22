@@ -64,7 +64,7 @@
         color: rgba(0, 0, 0, 0.6);
       }
 
-      background: url('/assets/pictures/line-black.png') 0 0;
+      background: url('../pictures/line-black.png') 0 0;
       -webkit-transition: all 0.3s ease-in-out;
       transition: all 0.3s ease-in-out;
       resize: none;
@@ -72,7 +72,7 @@
       &:active,
       &:focus {
         outline: 0;
-        background-image: url('/assets/pictures/line-yellow.png');
+        background-image: url('../pictures/line-yellow.png');
       }
     }
 

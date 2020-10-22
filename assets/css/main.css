@@ -779,7 +779,7 @@
   font-size: 18px;
   line-height: 21px;
   color: #333333;
-  background: url("/assets/pictures/line-black.png") 0 0;
+  background: url("../pictures/line-black.png") 0 0;
   transition: all 0.3s ease-in-out;
   resize: none;
 }
@@ -790,7 +790,7 @@
 
 .contacts__custumer-form textarea:active, .contacts__custumer-form textarea:focus {
   outline: 0;
-  background-image: url("/assets/pictures/line-yellow.png");
+  background-image: url("../pictures/line-yellow.png");
 }
 
 .contacts__custumer-form input {
