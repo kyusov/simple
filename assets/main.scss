@@ -53,6 +53,18 @@ h2 {
   margin: 0 auto;
 }
 
+@media screen and (max-width: 1200px) {
+  .container {
+    padding: 0 15px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container {
+    padding: 0;
+  }
+}
+
 .stroke-none {
   text-shadow: none;
 }

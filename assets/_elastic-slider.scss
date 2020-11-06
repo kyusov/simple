@@ -7,26 +7,25 @@
   .white,
   .darken {
     width: 100%;
+    top: 0;
   }
 
-  .white {
+  .top {
     z-index: 2;
-    position: relative;
-    // clip-path: url('#clip');
-  }
-
-  .darken {
-    z-index: 1;
     position: absolute;
+    clip-path: url('#myPath');
+  }
+  
+  .bottom {
+    z-index: 1;
+    position: relative;
   }
 
   .svg-slider {
     position: absolute;
     top: 0;
-    left: 0;
-    z-index: 4;
-    path {
-      fill: #c2212156;
-    }
+    right: 0;
+    z-index: 2;
+    transition: left .5s ease;
   }
 }
