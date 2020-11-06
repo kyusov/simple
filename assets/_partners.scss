@@ -60,21 +60,19 @@
       position: relative;
       &:hover {
         cursor: pointer;
-        &:before,
-        &:after {
+        &::before {
           width: 100%;
         }
       }
 
-      &:before,
-      &:after {
+      &::before {
         content: '';
         position: absolute;
         bottom: -10px;
         width: 15%;
         height: 5px;
         left: 0;
-        opacity: 0.2;
+        opacity: 0.4;
         transition: all 0.2s ease-in-out;
         transition-duration: 0.75s;
         background-color: $color-main;
@@ -183,58 +181,134 @@
     }
 
     &__c1 {
-      background-image: url('pictures/companys/ЗоодисконтЛого-darken.svg');
+      background-image: url('../pictures/companys/ЗоодисконтЛого-darken.svg');
       &:hover {
-        background-image: url('pictures/companys/active/Зоодисконт\ цвет\ цовер.svg');
+        background-image: url('../pictures/companys/active/Зоодисконт\ цвет\ цовер.svg');
       }
     }
 
     &__c2 {
-      background-image: url('pictures/companys/Кадровый-darken.svg');
+      background-image: url('../pictures/companys/Кадровый-darken.svg');
       &:hover {
-        background-image: url('pictures/companys/active/КЦ\ Цвет\ ховер.svg');
+        background-image: url('../pictures/companys/active/КЦ\ Цвет\ ховер.svg');
       }
     }
 
     &__c3 {
-      background-image: url('pictures/companys/Ноль\ Один-darken.svg');
+      background-image: url('../pictures/companys/Ноль\ Один-darken.svg');
       &:hover {
-        background-image: url('pictures/companys/active/01\ цвет\ ховер.svg');
+        background-image: url('../pictures/companys/active/01\ цвет\ ховер.svg');
       }
     }
 
     &__c4 {
-      background-image: url('pictures/companys/Начинка-darken.svg');
+      background-image: url('../pictures/companys/Начинка-darken.svg');
       &:hover {
-        background-image: url('pictures/companys/active/Начинка\ цвет\ ховер.svg');
+        background-image: url('../pictures/companys/active/Начинка\ цвет\ ховер.svg');
       }
     }
 
     &__c5 {
-      background-image: url('pictures/companys/Зооиндустрия\ лого-darken.svg');
+      background-image: url('../pictures/companys/Зооиндустрия\ лого-darken.svg');
       &:hover {
-        background-image: url('pictures/companys/active/Индустрия\ цвет\ ховер.svg');
+        background-image: url('../pictures/companys/active/Индустрия\ цвет\ ховер.svg');
       }
     }
 
     &__c6 {
-      background-image: url('pictures/companys/Колхоз-darken.svg');
+      background-image: url('../pictures/companys/Колхоз-darken.svg');
       &:hover {
-        background-image: url('pictures/companys/active/Колхоз\ цвет\ ховер.svg');
+        background-image: url('../pictures/companys/active/Колхоз\ цвет\ ховер.svg');
       }
     }
 
     &__c7 {
-      background-image: url('pictures/companys/ЗооОпт-darken.svg');
+      background-image: url('../pictures/companys/ЗооОпт-darken.svg');
       &:hover {
-        background-image: url('assets/pictures/companys/active/Зооопт\ цвет\ ховер.svg');
+        background-image: url('../pictures/companys/active/Зооопт\ цвет\ ховер.svg');
       }
     }
 
     &__c8 {
-      background-image: url('pictures/companys/Корм\ на\ дом-darken.svg');
+      background-image: url('../pictures/companys/Корм\ на\ дом-darken.svg');
       &:hover {
-        background-image: url('pictures/companys/active/Корм\ цвет\ ховер.svg');
+        background-image: url('../pictures/companys/active/Корм\ цвет\ ховер.svg');
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .partners {
+    margin-top: 150px;
+
+    &__title {
+      text-align: center;
+    }
+
+    &__companys {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: flex-start;
+    }
+
+    &__c1,
+    &__c2,
+    &__c3,
+    &__c5,
+    &__c6,
+    &__c7 {
+      width: 13em;
+    }
+
+    &__c4,
+    &__c8 {
+      background-size: contain;
+      width: 9em;
+    }
+
+    &__column {
+      width: 45%;
+    }
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .partners {
+    margin-top: 100px;
+
+    &__title {
+      font-size: 24px;
+      line-height: 28px;
+      width: 160px;
+      text-align: left;
+      padding-left: 44px;
+    }
+
+    &__companys {
+      margin-top: 40px;
+      padding-left: 30px;
+    }
+
+    &__company {
+      width: 6em;
+      height: 5em;
+    }
+
+    &__c4,
+    &__c8 {
+      width: 4em;
+    }
+
+    &__more-btn {
+      font-size: 14px;
+      line-height: 16px;
+
+      span {
+        &::before {
+          width: 100%;
+          height: 9px;
+        }
       }
     }
   }

@@ -74,6 +74,18 @@
       filter: blur(18px);
     }
   }
+
+  &__bag {
+    &-left {
+      width: 35%;
+    }
+    &-right {
+      width: 30%;
+    }
+    &-bottom {
+      width: 20%;
+    }
+  }
 }
 
 .darken {
@@ -84,6 +96,73 @@
       &:before {
         background-color: $color-main;
         z-index: -1;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .offer {
+    &__card {
+      max-width: 408px;
+    }
+    &__egg {
+      &-left {
+        height: 217px;
+        top: 25%;
+        left: 6.4%;
+        filter: blur(13px);
+      }
+      &-right {
+        height: 180px;
+        top: 43%;
+        left: 68%;
+      }
+      &-bottom {
+        top: -10%;
+        left: 72%;
+        height: 136px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .offer {
+    &__card {
+      width: 230px;
+    }
+
+    &__buy-btn {
+      margin-top: 60px;
+      font-weight: 500;
+      width: 224px;
+      padding: 19px 33px;
+    }
+
+    &__egg {
+      &-left {
+        width: 100px;
+        height: 104px;
+        top: 85px;
+        left: 0;
+        filter: blur(5px);
+      }
+
+      &-bottom {
+        width: 51px;
+        height: 61px;
+        left: unset;
+        right: 25px;
+      }
+
+      &-right {
+        width: 75px;
+        height: 96px;
+        left: unset;
+        top: 100px;
+        right: 20px;
+        filter: blur(5px);
       }
     }
   }

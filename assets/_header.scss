@@ -54,3 +54,32 @@ $menu-btn-height: 64px;
     }
   }
 }
+
+@media screen and (max-width: 768px) {
+  .header {
+    &__wrapper {
+      width: 100%;
+      margin: 0;
+      padding: 0 82px;
+    }
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .header {
+    &__wrapper {
+      padding: 0 18px;
+    }
+
+    &__menu-btn {
+      width: 34px;
+      height: 34px;
+      font-size: 8px;
+      line-height: 9px;
+    }
+
+    &__logo {
+      height: 50px;
+    }
+  }
+}

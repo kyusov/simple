@@ -4,10 +4,10 @@
   &__text {
     z-index: -3;
     height: 96px;
-    background: repeat-x url('/assets/pictures/rollText.svg') center / contain;
+    background: repeat-x url('../pictures/rollText.svg') center / contain;
     background-size: 1452px 96px;
     background-position: 0px 0px;
-    // animation: marquee 8s linear infinite reverse;
+    animation: marquee 8s linear infinite reverse;
   }
 }
 
@@ -15,7 +15,8 @@
   .ticker {
     background-color: $color-darken;
     &__text {
-      background: repeat-x url('/assets/pictures/rollTextDarken.svg') center / contain;
+      background: repeat-x url('../pictures/rollTextDarken.svg') center /
+        contain;
       background-size: 1452px 96px;
       background-position: 0px 0px;
     }
@@ -28,5 +29,25 @@
   }
   100% {
     background-position: 1452px 0;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .ticker {
+    margin-top: 25px;
+
+    &__text {
+      height: 70px;
+      background-size: 884px 65px;
+    }
+  }
+
+  .darken {
+    .ticker {
+      &__text {
+        height: 70px;
+        background-size: 884px 65px;
+      }
+    }
   }
 }
