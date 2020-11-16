@@ -367,6 +367,7 @@
       input:not(:first-child),
       textarea {
         margin-top: 30px;
+        background-position-y: -1px;
       }
     }
 
