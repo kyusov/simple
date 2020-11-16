@@ -347,7 +347,7 @@
     &__left,
     &__right {
       width: 100%;
-      padding: 0 82px;
+      padding: 0 0 0 82px;
     }
 
     &__right {
@@ -364,9 +364,11 @@
     }
 
     &__custumer-form {
+      width: 75%;
       input:not(:first-child),
       textarea {
         margin-top: 30px;
+        background-position-y: -1;
       }
     }
 
