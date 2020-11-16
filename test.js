@@ -7,12 +7,11 @@ window.onload = () => {
 
   let sideBarWidth = 0
 
-  if (window.innerWidth < 1440 && window.innerWidth > 1366) {
-    sideBarWidth = 0
-  } else {
-    sideBarWidth = 0
-  }
-   
+  // if (window.innerWidth < 1440 && window.innerWidth > 1366) {
+  //   sideBarWidth = 0
+  // } else {
+  //   sideBarWidth = 0
+  // }
 
   rect.setAttribute('width', window.innerWidth)
   rect.setAttribute('x', -sideBarWidth)
@@ -31,7 +30,6 @@ window.onload = () => {
       dark.classList.add('top')
       rect.setAttribute('x', window.innerWidth - sideBarWidth)
 
-      
       let start = null
       function step(timestamp) {
         if (!start) start = timestamp
@@ -77,6 +75,31 @@ window.onload = () => {
       window.requestAnimationFrame(step)
 
       right = true
+    }
+  })
+
+  // modals
+  const buyCardBtn = document.querySelector('.offer__purchase-card')
+  const modalBuyCard = document.querySelector('.modal-buy')
+  const becomePartnerBtn = document.querySelector('.offer__partner-btn')
+
+  buyCardBtn.addEventListener('click', (e) => {
+    if (modalBuyCard.classList.contains('active')) {
+      document.body.style.overflowY = 'unset'
+      modalBuyCard.classList.remove('active')
+    } else {
+      document.body.style.overflowY = 'hidden'
+      modalBuyCard.classList.add('active')
+    }
+  })
+
+  modalBuyCard.addEventListener('click', (e) => {
+    if (
+      e.target.classList.contains('modal-buy') ||
+      e.target.classList.contains('modal-buy__inner_wrapper')
+    ) {
+      document.body.style.overflowY = 'unset'
+      modalBuyCard.classList.remove('active')
     }
   })
 }

@@ -1,0 +1,137 @@
+.modal-buy {
+  position: absolute;
+  z-index: 100;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -100%);
+  transition: transform 0.4s ease;
+
+  overflow: hidden;
+
+  width: 100vw;
+  height: 100vh;
+  background-color: #ffffff;
+
+  &.active {
+    transform: translate(-50%, 0);
+  }
+
+  &__wrapper {
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  &__inner_wrapper {
+    margin-top: 10%;
+  }
+
+  &__title {
+    text-transform: uppercase;
+    font-size: 48px;
+    font-weight: 900;
+  }
+
+  &__purchase_card,
+  &__title {
+    max-width: 690px;
+    margin: 0 auto;
+  }
+
+  &__purchase_card {
+    input {
+      width: 100%;
+
+      font-size: 36px;
+      font-weight: 400;
+      line-height: 42px;
+
+      border: none;
+      border-bottom: 2px solid black;
+      outline: none;
+
+      &::placeholder {
+        color: rgba(0, 0, 0, 0.3);
+      }
+
+      &:first-child {
+        margin-top: 60px;
+      }
+
+      &:not(:first-child) {
+        margin-top: 30px;
+      }
+
+      &[type='checkbox'] {
+        position: absolute;
+        z-index: -5;
+        opacity: 0;
+
+        margin: 0;
+      }
+
+      &[type='checkbox'] + label {
+        display: inline-flex;
+        align-items: center;
+        user-select: none;
+
+        &::before {
+          content: '';
+          display: inline-block;
+          width: 0.75em;
+          height: 0.75em;
+          border: 1px solid $color-text;
+
+          margin-right: 0.75em;
+          background-color: $color-text;
+          background-repeat: no-repeat;
+          background-position: center center;
+          background-size: 50% 50%;
+        }
+
+        &:hover {
+          cursor: pointer;
+        }
+      }
+
+      &[type='checkbox']:checked + label {
+        &::before {
+          border-color: $color-main;
+          background-color: $color-main;
+          background-image: url('../pictures/check.svg');
+        }
+      }
+    }
+  }
+
+  &__consent-purchase {
+    margin-top: 30px;
+    font-size: 14px;
+    font-weight: 400;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  &__purchase-btn {
+    margin: 0;
+    padding: 22px 95px;
+    background-color: #ffffff;
+    &::before {
+      background-color: $color-main;
+    }
+  }
+
+  &__hint {
+    // max-width: 931px;
+    width: 100%;
+    // margin-left: 374px;
+    margin-top: 50px;
+
+    font-size: 36px;
+    font-weight: 400;
+    line-height: 42px;
+
+    color: rgba(0, 0, 0, 0.3);
+  }
+}

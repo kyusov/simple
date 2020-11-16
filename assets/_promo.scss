@@ -112,7 +112,7 @@
     &__text {
       font-size: 96px;
       line-height: 105px;
-      padding-left: 82px;
+      padding-left: 76px;
       .hide {
         display: unset;
       }
@@ -136,11 +136,16 @@
     .promo {
       &__text {
         color: $color-text;
+        padding-left: 69px;
         span > span {
           color: $color-white;
           z-index: 0;
           top: 8.5%;
         }
+      }
+
+      &__controls {
+        padding-left: 74px;
       }
     }
   }
