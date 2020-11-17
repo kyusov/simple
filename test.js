@@ -1,5 +1,4 @@
 window.onload = () => {
-
   $('.marquee').marquee({
     duration: 15000,
     startVisible: true,
@@ -32,7 +31,7 @@ window.onload = () => {
   tempRect.setAttribute('width', window.innerWidth)
   tempRect.setAttribute('x', -sideBarWidth)
   tempRect.setAttribute('height', document.body.clientHeight)
-  
+
   rect.setAttribute('width', window.innerWidth)
   rect.setAttribute('x', -sideBarWidth)
   rect.setAttribute('height', document.body.clientHeight)
@@ -41,6 +40,8 @@ window.onload = () => {
 
   let right = true
   svg.addEventListener('click', (e) => {
+    tempRect.style.display = 'none'
+    defs.style.display = 'block'
     if (right) {
       svg.style.right = 'unset'
       svg.style.left = 0
@@ -49,6 +50,7 @@ window.onload = () => {
       dark.classList.remove('bottom')
       dark.classList.add('top')
       rect.setAttribute('x', window.innerWidth - sideBarWidth)
+      tempRect.setAttribute('x', window.innerWidth - sideBarWidth)
 
       let start = null
       function step(timestamp) {
@@ -58,9 +60,14 @@ window.onload = () => {
 
         if (temp - progress > sideBarWidth) {
           rect.setAttribute('x', temp - progress)
+          tempRect.setAttribute('x', temp - progress)
           window.requestAnimationFrame(step)
         } else {
           rect.setAttribute('x', sideBarWidth)
+          tempRect.setAttribute('x', sideBarWidth)
+          tempRect.style.display = 'block'
+          
+          defs.style.display = 'none'
         }
       }
 
