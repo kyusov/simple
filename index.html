@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Test</title>
     <link rel="stylesheet" href="assets/css/main.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha256-4+XzXVhsDmqanXGHaHvgh1gMQKX40OUvDEBTu8JcmNs=" crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/jquery.marquee@1.5.0/jquery.marquee.min.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -24,7 +27,8 @@
                 <form action="/purchase" class="modal-buy__purchase_card">
                     <input type="text" name="name" id="name" placeholder="Имя" required>
                     <input type="email" name="email" id="email" placeholder="Email" required>
-                    <input type="tel" name="phone" id="phone" placeholder="Номер телефона" pattern="\+?[0-9\s\-\(\)]+" minlength="11" maxlength="12" required>
+                    <input type="tel" name="phone" id="phone" placeholder="Номер телефона" pattern="\+?[0-9\s\-\(\)]+"
+                        minlength="11" maxlength="12" required>
                     <div class="modal-buy__consent-purchase">
                         <input type="checkbox" name="consent-purchase" id="consent-purchase">
                         <label for="consent-purchase">Согласие на обработку персональных данных</label>
@@ -48,27 +52,29 @@
                     </div>
                 </div>
             </header>
-            <div class="ticker">
-                <div class="ticker__text"></div>
+            <div class="marquee">
+                <img class="marquee__img" src="assets/pictures/rollText.svg" alt="rolling text">
+                <!-- <img class="marquee__img" src="assets/pictures/rollText.svg" alt="rolling text"> -->
             </div>
             <div class="offer">
                 <div class="container">
                     <div class="offer__wrapper">
                         <picture>
-                            <source srcset="assets/pictures/egg-left.webp">
-                            <img src="assets/pictures/egg-left.png" alt="egg" class="offer__egg offer__egg-left">
-                        </picture>
-                        <picture>
-                            <source srcset="assets/pictures/egg-right.webp">
-                            <img src="assets/pictures/egg-right.png" alt="egg" class="offer__egg offer__egg-right">
-                        </picture>
-                        <picture>
-                            <source srcset="assets/pictures/egg-bottom.webp">
-                            <img src="assets/pictures/egg-bottom.png" alt="egg" class="offer__egg offer__egg-bottom">
-                        </picture>
-                        <picture>
                             <source srcset="assets/pictures/card.webp">
                             <img src="assets/pictures/card.png" alt="Карта Проще" class="offer__card">
+                            <picture>
+                                <source srcset="assets/pictures/egg-left.webp">
+                                <img src="assets/pictures/egg-left.png" alt="egg" class="offer__egg offer__egg-left">
+                            </picture>
+                            <picture>
+                                <source srcset="assets/pictures/egg-right.webp">
+                                <img src="assets/pictures/egg-right.png" alt="egg" class="offer__egg offer__egg-right">
+                            </picture>
+                            <picture>
+                                <source srcset="assets/pictures/egg-bottom.webp">
+                                <img src="assets/pictures/egg-bottom.png" alt="egg"
+                                    class="offer__egg offer__egg-bottom">
+                            </picture>
                         </picture>
                         <button class="offer__buy-btn offer__purchase-card">Приобрести карту</button>
                     </div>
@@ -96,13 +102,39 @@
                                             у партнеров бонусной программы</p>
                                     </div>
                                 </div>
-                                <img class="privileges__picture" src="assets/pictures/Pay.png" alt="pay">
-                                <!-- <object class="privileges__picture" type="image/svg+xml" data="assets/pictures/pay-test.svg">
-                                    <img src="assets/pictures/pay.webp">
-                                </object> -->
+                                <picture>
+                                    <source media="(max-width: 320px)" srcset="assets/pictures/pay.webp" type="image/webp">
+                                    <img class="privileges__picture" src="assets/pictures/pay-test.svg" alt="paycard">
+                                    <picture>
+                                        <source media="(max-width: 320px)" srcset="assets/pictures/card-terminal320.png">
+                                        <img class="card-terminal" src="assets/pictures/card-terminal.png" alt="card terminal">
+                                    </picture>
+                                    <picture>
+                                        <source media="(max-width: 320px)" srcset="assets/pictures/shadow320.png">
+                                        <img class="terminal-shadow" src="assets/pictures/shadow.png" alt="shadow terminal">
+                                    </picture>
+                                    <picture>
+                                        <!-- <source media="(min-width: 320px)" srcset="assets/pictures/one-money320.png"> -->
+                                        <img class="one-money" src="assets/pictures/one-money.svg" alt="money">
+                                    </picture>
+                                    <picture>
+                                        <source media="(max-width: 320px)" srcset="assets/pictures/two-money320.png">
+                                        <img class="two-money" src="assets/pictures/two-money.png" alt="money">
+                                    </picture>
+                                </picture>
                             </div>
                             <div class="privileges__item">
-                                <img class="privileges__picture" src="assets/pictures/Bonus.png" alt="bonus">
+
+                                <picture>
+                                    <img class="privileges__picture" src="assets/pictures/bonus.svg" alt="fireExtinguisher"> <!-- ?? picture ?? -->
+                                    <picture>
+                                        <img class="fire" src="assets/pictures/fire.svg" alt="fireExtinguisher">
+                                    </picture>
+                                    <picture>
+                                        <img class="fire-shadow" src="assets/pictures/fire-shadow.svg" alt="shadow">
+                                    </picture>
+                                </picture>
+                                <!-- <img class="privileges__picture" src="assets/pictures/Bonus.png" alt="bonus"> -->
                                 <!-- <object class="privileges__picture" type="image/svg+xml"
                                     data="assets/pictures/fireExtinguisher.svg">
                                     <img src="assets/pictures/fireExtinguisher.webp">

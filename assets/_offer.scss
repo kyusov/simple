@@ -1,4 +1,7 @@
 .offer {
+
+  // margin-top: 155px;
+
   &__wrapper {
     // z-index: 25;
     position: relative;
@@ -44,13 +47,6 @@
 
     &:hover {
       cursor: pointer;
-    }
-
-    &:active {
-      transform: translate(5px, 10px);
-      &:before {
-        content: none;
-      }
     }
   }
 
@@ -102,27 +98,114 @@
   }
 }
 
+@media screen and (max-width: 1200px) {
+  .offer {
+    &__wrapper {
+      > picture {
+        position: relative;
+      }
+    }
+
+    &__egg {
+      &-left {
+        left: -25%;
+      }
+      &-right {
+        left: unset;
+        right: -10%;
+      }
+      &-bottom {
+        left: unset;
+        right: -15%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1040px) {
+  .offer {
+    &__egg {
+      &-left {
+        width: 40%;
+        top: unset;
+        bottom: -15%;
+        left: -15%;
+      }
+      &-right {
+        width: 30%;
+        left: unset;
+        right: -10%;
+      }
+      &-bottom {
+        width: 25%;
+        left: unset;
+        right: -15%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 975px) {
+  .offer {
+    &__wrapper {
+      > picture {
+        display: flex;
+        justify-content: center;
+      }
+    }
+
+    &__egg {
+      &-left {
+        width: 35%;
+        top: unset;
+        bottom: -15%;
+        left: -4%;
+      }
+      &-right {
+        width: 25%;
+        left: unset;
+        top: unset;
+        bottom: -10%;
+        right: 0;
+      }
+      &-bottom {
+        width: 20%;
+        left: unset;
+        right: 2%;
+      }
+    }
+
+    &__card {
+      width: 75%;
+    }
+  }
+}
+
 @media screen and (max-width: 768px) {
   .offer {
     &__card {
-      max-width: 408px;
+      max-width: 612px;
     }
     &__egg {
       &-left {
-        height: 217px;
-        top: 25%;
-        left: 6.4%;
-        filter: blur(13px);
+        top: unset;
+        bottom: -20%;
+        left: -4%;
+        filter: blur(5px);
       }
+
       &-right {
-        height: 180px;
-        top: 43%;
-        left: 68%;
+        top: unset;
+        left: unset;
+        right: 5%;
+        bottom: -20%;
+        filter: blur(4px);
       }
+
       &-bottom {
-        top: -10%;
-        left: 72%;
-        height: 136px;
+        top: -15%;
+        left: unset;
+        right: 5%;;
       }
     }
   }
@@ -131,7 +214,7 @@
 @media screen and (max-width: 550px) {
   .offer {
     &__card {
-      width: 230px;
+      width: 250px;
     }
 
     &__buy-btn {
@@ -144,114 +227,24 @@
     &__egg {
       &-left {
         width: 100px;
-        height: 104px;
-        top: 85px;
-        left: calc(100% - 82vw);
         filter: blur(5px);
+        top: unset;
+        right: unset;
+        left: -20%;
       }
 
       &-bottom {
         width: 51px;
-        height: 61px;
         left: unset;
-        right: calc(100% - 77vw);
+        right: -7%;
       }
 
       &-right {
         width: 75px;
-        height: 96px;
         left: unset;
-        top: 100px;
-        right: calc(100% - 82vw);
+        top: unset;
+        right: -7%;
         filter: blur(5px);
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .offer {
-    &__egg {
-      &-bottom {
-        left: unset;
-        right: calc(100% - 81vw);
-      }
-
-      &-right {
-        left: unset;
-        top: 100px;
-        right: calc(100% - 85vw);
-      }
-
-      &-left {
-        top: 85px;
-        left: calc(100% - 87vw);
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 425px) {
-  .offer {
-    &__egg {
-      &-bottom {
-        left: unset;
-        right: 15%;
-      }
-
-      &-right {
-        left: unset;
-        top: 100px;
-        right: 15%;
-      }
-
-      &-left {
-        top: 85px;
-        left: 10%;
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 375px) {
-  .offer {
-    &__egg {
-      &-bottom {
-        left: unset;
-        right: 40px;
-      }
-
-      &-right {
-        left: unset;
-        top: 100px;
-        right: 30px;
-      }
-
-      &-left {
-        top: 85px;
-        left: 10px;
-      }
-    }
-  }
-}
-
-@media screen and (max-width: 340px) {
-  .offer {
-    &__egg {
-      &-bottom {
-        left: unset;
-        right: 20px;
-      }
-
-      &-right {
-        left: unset;
-        top: 100px;
-        right: 15px;
-      }
-
-      &-left {
-        top: 85px;
-        left: -5px;
       }
     }
   }

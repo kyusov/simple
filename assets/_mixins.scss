@@ -1,0 +1,7 @@
+@mixin textStroke($width, $color) {
+    @supports (-webkit-text-stroke: 1px black) {
+        -webkit-text-stroke-width: $width;
+        -webkit-text-stroke-color: $color;
+        text-stroke: $width $color;
+    }
+}

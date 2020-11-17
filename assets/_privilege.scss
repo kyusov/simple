@@ -264,8 +264,63 @@
         margin-top: 150px;
         flex-direction: column;
         align-items: center;
+
         &:not(:nth-child(2)) {
           flex-direction: column-reverse;
+        }
+
+        > picture {
+          position: relative;
+        }
+
+        .card-terminal,
+        .terminal-shadow,
+        .one-money,
+        .two-money,
+        .fire,
+        .fire-shadow {
+          position: absolute;
+        }
+
+        .card-terminal {
+          bottom: 24%;
+          right: 6%;
+          z-index: 1;
+
+          animation: infinite 4s ease terminal;
+        }
+
+        .terminal-shadow {
+          bottom: 14%;
+          right: 5%;
+          z-index: 0;
+          animation: infinite 4s 0.2s ease shadow;
+        }
+
+        .one-money {
+          left: 16%;
+          top: 44%;
+          animation: infinite 3s 1s ease oneMoney;
+        }
+
+        .two-money {
+          left: 6.4%;
+          bottom: 12.4%;
+          animation: infinite 3s 2s ease oneMoney;
+        }
+
+        .fire {
+          left: -8%;
+          bottom: 40%;
+          z-index: 1;
+          animation: infinite 5s ease fire;
+        }
+
+        .fire-shadow {
+          left: 3%;
+          bottom: 40%;
+          z-index: 0;
+          animation: infinite 5s ease fireShadow;
         }
       }
 
@@ -371,5 +426,67 @@
       font-size: 36px;
       line-height: 42px;
     }
+  }
+}
+
+@keyframes terminal {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(0, -50px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes shadow {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.25);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes oneMoney {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(0, -30px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes fire {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(0, -15px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes fireShadow {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(0.7);
+  }
+
+  100% {
+    transform: scale(1);
   }
 }

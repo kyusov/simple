@@ -7,12 +7,14 @@
   transition: transform 0.4s ease;
 
   overflow: hidden;
+  display: none;
 
   width: 100vw;
   height: 100vh;
   background-color: #ffffff;
 
   &.active {
+    display: block;
     transform: translate(-50%, 0);
   }
 
@@ -133,5 +135,41 @@
     line-height: 42px;
 
     color: rgba(0, 0, 0, 0.3);
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .modal-buy {
+    &__title {
+      padding: 0 18px;
+      font-size: 24px;
+      line-height: 28px;
+    }
+
+    &__purchase_card {
+      padding: 0 18px;
+      input {
+        font-size: 18px;
+        line-height: 21px;
+        border-bottom: 2px solid #333;
+      }
+    }
+
+    &__consent-purchase {
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &__purchase-btn {
+      margin-top: 20px;
+      padding: 19px 82px;
+      font-size: 18px;
+      line-height: 21px;
+    }
+
+    &__hint {
+      font-size: 12px;
+      line-height: 14px;
+    }
   }
 }

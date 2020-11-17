@@ -1,4 +1,11 @@
 window.onload = () => {
+
+  $('.marquee').marquee({
+    duration: 15000,
+    startVisible: true,
+    duplicated: true,
+  })
+
   const svg = document.querySelector('.svg-slider')
   const rect = document.querySelector('.svg-slider > defs > clipPath > rect')
 
