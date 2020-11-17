@@ -1575,6 +1575,9 @@
     font-size: 24px;
     line-height: 28px;
   }
+  .contacts__custumer-form {
+    width: 100%;
+  }
   .contacts__custumers {
     margin-top: 21px;
   }
@@ -1755,7 +1758,7 @@
   color: rgba(0, 0, 0, 0.3);
 }
 
-@media screen and (max-width: 320px) {
+@media screen and (max-width: 425px) {
   .modal-buy__title {
     padding: 0 18px;
     font-size: 24px;
