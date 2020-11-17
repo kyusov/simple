@@ -206,14 +206,20 @@
   .offer__wrapper > picture {
     position: relative;
   }
+  .offer__card {
+    max-width: 600px;
+  }
   .offer__egg-left {
+    width: 55%;
     left: -25%;
   }
   .offer__egg-right {
+    width: 35%;
     left: unset;
     right: -10%;
   }
   .offer__egg-bottom {
+    width: 25%;
     left: unset;
     right: -15%;
   }
@@ -420,6 +426,61 @@
   justify-content: flex-end;
 }
 
+.privilege .privileges__item > picture {
+  position: relative;
+}
+
+.privilege .privileges__item .card-terminal,
+.privilege .privileges__item .terminal-shadow,
+.privilege .privileges__item .one-money,
+.privilege .privileges__item .two-money,
+.privilege .privileges__item .fire,
+.privilege .privileges__item .fire-shadow {
+  position: absolute;
+}
+
+.privilege .privileges__item .card-terminal {
+  bottom: 24%;
+  right: 6%;
+  z-index: 1;
+  animation: infinite 4s ease terminal;
+}
+
+.privilege .privileges__item .terminal-shadow {
+  bottom: 14%;
+  right: 5%;
+  z-index: 0;
+  animation: infinite 4s 0.2s ease shadow;
+}
+
+.privilege .privileges__item .one-money {
+  left: 34%;
+  top: 44%;
+  animation: infinite 3s 1s ease oneMoney;
+}
+
+.privilege .privileges__item .two-money {
+  left: 25%;
+  bottom: 12.4%;
+  animation: infinite 3s 2s ease oneMoney;
+}
+
+.privilege .privileges__item .fire {
+  left: 8%;
+  bottom: 40%;
+  z-index: 1;
+  animation: infinite 5s ease fire;
+}
+
+.privilege .privileges__item .fire-shadow {
+  left: 14%;
+  bottom: 40%;
+  z-index: 0;
+  animation: infinite 5s ease fireShadow;
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
 .privilege .privileges__text {
   max-width: 390px;
   display: flex;
@@ -449,25 +510,6 @@
 
 .privilege .privileges__picture:nth-child(1) {
   margin-right: 100px;
-}
-
-#one-money {
-  animation: ease-in-out 2s infinite coin-two;
-  will-change: transform;
-}
-
-#two-money {
-  animation: 2s ease-in-out 1s infinite coin-two;
-}
-
-#card {
-  animation: 2s ease-in-out 1s infinite card;
-}
-
-#shadow {
-  animation: 2s ease-in-out 1s infinite shadow-anim;
-  transform-origin: center;
-  transform-box: fill-box;
 }
 
 @keyframes coin {
@@ -572,50 +614,29 @@
   .privilege .privileges__item:not(:nth-child(2)) {
     flex-direction: column-reverse;
   }
-  .privilege .privileges__item > picture {
-    position: relative;
-  }
-  .privilege .privileges__item .card-terminal,
-  .privilege .privileges__item .terminal-shadow,
-  .privilege .privileges__item .one-money,
-  .privilege .privileges__item .two-money,
-  .privilege .privileges__item .fire,
-  .privilege .privileges__item .fire-shadow {
-    position: absolute;
-  }
   .privilege .privileges__item .card-terminal {
     bottom: 24%;
     right: 6%;
-    z-index: 1;
-    animation: infinite 4s ease terminal;
   }
   .privilege .privileges__item .terminal-shadow {
     bottom: 14%;
     right: 5%;
-    z-index: 0;
-    animation: infinite 4s 0.2s ease shadow;
   }
   .privilege .privileges__item .one-money {
-    left: 16%;
+    left: 17%;
     top: 44%;
-    animation: infinite 3s 1s ease oneMoney;
   }
   .privilege .privileges__item .two-money {
     left: 6.4%;
     bottom: 12.4%;
-    animation: infinite 3s 2s ease oneMoney;
   }
   .privilege .privileges__item .fire {
     left: -8%;
     bottom: 40%;
-    z-index: 1;
-    animation: infinite 5s ease fire;
   }
   .privilege .privileges__item .fire-shadow {
     left: 3%;
     bottom: 40%;
-    z-index: 0;
-    animation: infinite 5s ease fireShadow;
   }
   .privilege .privileges__picture {
     margin: 0;

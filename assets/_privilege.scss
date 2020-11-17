@@ -100,6 +100,62 @@
       &:nth-child(2) {
         justify-content: flex-end;
       }
+
+      > picture {
+        position: relative;
+      }
+
+      .card-terminal,
+      .terminal-shadow,
+      .one-money,
+      .two-money,
+      .fire,
+      .fire-shadow {
+        position: absolute;
+      }
+
+      .card-terminal {
+        bottom: 24%;
+        right: 6%;
+        z-index: 1;
+
+        animation: infinite 4s ease terminal;
+      }
+
+      .terminal-shadow {
+        bottom: 14%;
+        right: 5%;
+        z-index: 0;
+        animation: infinite 4s 0.2s ease shadow;
+      }
+
+      .one-money {
+        left: 34%;
+        top: 44%;
+        animation: infinite 3s 1s ease oneMoney;
+      }
+
+      .two-money {
+        left: 25%;
+        bottom: 12.4%;
+        animation: infinite 3s 2s ease oneMoney;
+      }
+
+      .fire {
+        left: 8%;
+        bottom: 40%;
+        z-index: 1;
+        animation: infinite 5s ease fire;
+      }
+
+      .fire-shadow {
+        left: 14%;
+        bottom: 40%;
+        z-index: 0;
+        animation: infinite 5s ease fireShadow;
+        transform-origin: center;
+        transform-box: fill-box;
+      }
     }
 
     &__text {
@@ -134,27 +190,6 @@
   }
 }
 
-#one-money {
-  animation: ease-in-out 2s infinite coin-two;
-  will-change: transform;
-}
-
-#two-money {
-  animation: 2s ease-in-out 1s infinite coin-two;
-  // will-change: transform;
-}
-
-#card {
-  animation: 2s ease-in-out 1s infinite card;
-  // will-change: transform;
-}
-
-#shadow {
-  animation: 2s ease-in-out 1s infinite shadow-anim;
-  transform-origin: center;
-  transform-box: fill-box;
-  // will-change: transform;
-}
 
 @keyframes coin {
   0% {
@@ -269,58 +304,34 @@
           flex-direction: column-reverse;
         }
 
-        > picture {
-          position: relative;
-        }
-
-        .card-terminal,
-        .terminal-shadow,
-        .one-money,
-        .two-money,
-        .fire,
-        .fire-shadow {
-          position: absolute;
-        }
-
         .card-terminal {
           bottom: 24%;
           right: 6%;
-          z-index: 1;
-
-          animation: infinite 4s ease terminal;
         }
-
+  
         .terminal-shadow {
           bottom: 14%;
           right: 5%;
-          z-index: 0;
-          animation: infinite 4s 0.2s ease shadow;
         }
-
+  
         .one-money {
-          left: 16%;
+          left: 17%;
           top: 44%;
-          animation: infinite 3s 1s ease oneMoney;
         }
-
+  
         .two-money {
           left: 6.4%;
           bottom: 12.4%;
-          animation: infinite 3s 2s ease oneMoney;
         }
-
+  
         .fire {
           left: -8%;
           bottom: 40%;
-          z-index: 1;
-          animation: infinite 5s ease fire;
         }
-
+  
         .fire-shadow {
           left: 3%;
           bottom: 40%;
-          z-index: 0;
-          animation: infinite 5s ease fireShadow;
         }
       }
 
