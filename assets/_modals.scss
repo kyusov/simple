@@ -1,23 +1,23 @@
+.overlay {
+}
+
 .modal-buy {
-  position: absolute;
-  z-index: 100;
-  top: 0;
-  left: 50%;
-  transform: translate(-50%, -100%);
-  transition: transform 0.4s ease;
-
-  overflow: hidden;
-  display: none;
-
-  width: 100vw;
+  width: 100%;
   height: 100vh;
-  background-color: #ffffff;
+  position: fixed;
+ 
+  overflow: hidden;
+  background-color: #fff;
+  left: 0;
+  top: 0;
+
+  z-index: 5;
+  display: none;
 
   &.active {
     display: block;
-    transform: translate(-50%, 0);
   }
-
+  
   &__wrapper {
     max-width: 1440px;
     width: 100%;

@@ -7,19 +7,32 @@ window.onload = () => {
   })
 
   const svg = document.querySelector('.svg-slider')
+  const tempRect = document.querySelector('.svg-slider > rect')
   const rect = document.querySelector('.svg-slider > defs > clipPath > rect')
+  const defs = document.querySelector('.svg-slider > defs')
 
   const white = document.querySelector('.white')
   const dark = document.querySelector('.darken')
 
+  for (let i = 0; i < dark.children.length; i++) {
+    dark.children[i].style.display = 'none'
+  }
+
+  white.classList.toggle('active')
+  defs.style.display = 'none'
+
   let sideBarWidth = 0
 
-  // if (window.innerWidth < 1440 && window.innerWidth > 1366) {
-  //   sideBarWidth = 0
-  // } else {
-  //   sideBarWidth = 0
-  // }
+  if (window.innerWidth < 1440 && window.innerWidth > 1366) {
+    sideBarWidth = 50
+  } else {
+    sideBarWidth = 70
+  }
 
+  tempRect.setAttribute('width', window.innerWidth)
+  tempRect.setAttribute('x', -sideBarWidth)
+  tempRect.setAttribute('height', document.body.clientHeight)
+  
   rect.setAttribute('width', window.innerWidth)
   rect.setAttribute('x', -sideBarWidth)
   rect.setAttribute('height', document.body.clientHeight)
@@ -86,27 +99,29 @@ window.onload = () => {
   })
 
   // modals
-  const buyCardBtn = document.querySelector('.offer__purchase-card')
-  const modalBuyCard = document.querySelector('.modal-buy')
+  const buyCardBtns = [...document.querySelectorAll('.offer__purchase-card')]
+  const overlay = document.querySelector('.modal-buy')
   const becomePartnerBtn = document.querySelector('.offer__partner-btn')
 
-  buyCardBtn.addEventListener('click', (e) => {
-    if (modalBuyCard.classList.contains('active')) {
-      document.body.style.overflowY = 'unset'
-      modalBuyCard.classList.remove('active')
-    } else {
-      document.body.style.overflowY = 'hidden'
-      modalBuyCard.classList.add('active')
-    }
-  })
+  for (let i = 0; i < buyCardBtns.length; i++) {
+    buyCardBtns[i].addEventListener('click', (e) => {
+      if (overlay.classList.contains('active')) {
+        document.body.style.overflowY = 'unset'
+        overlay.classList.remove('active')
+      } else {
+        document.body.style.overflowY = 'hidden'
+        overlay.classList.add('active')
+      }
+    })
+  }
 
-  modalBuyCard.addEventListener('click', (e) => {
+  overlay.addEventListener('click', (e) => {
     if (
       e.target.classList.contains('modal-buy') ||
       e.target.classList.contains('modal-buy__inner_wrapper')
     ) {
       document.body.style.overflowY = 'unset'
-      modalBuyCard.classList.remove('active')
+      overlay.classList.remove('active')
     }
   })
 }

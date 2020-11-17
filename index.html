@@ -12,35 +12,37 @@
 </head>
 
 <body>
-    <div class="modal-buy">
-        <div class="modal-buy__wrapper">
-            <header class="header">
-                <div class="container">
-                    <div class="header__wrapper">
-                        <img src="assets/pictures/logo.svg" alt="Логотип" class="header__logo">
-                        <div class="header__menu-btn">Меню</div>
+    <!-- <div class="overlay"> -->
+        <div class="modal-buy">
+            <div class="modal-buy__wrapper">
+                <header class="header">
+                    <div class="container">
+                        <div class="header__wrapper">
+                            <img src="assets/pictures/logo.svg" alt="Логотип" class="header__logo">
+                            <div class="header__menu-btn">Меню</div>
+                        </div>
                     </div>
+                </header>
+                <div class="modal-buy__inner_wrapper">
+                    <h2 class="modal-buy__title">ПРИОБРЕСТИ КАРТУ</h2>
+                    <form action="/purchase" class="modal-buy__purchase_card">
+                        <input type="text" name="name" id="name" placeholder="Имя" required>
+                        <input type="email" name="email" id="email" placeholder="Email" required>
+                        <input type="tel" name="phone" id="phone" placeholder="Номер телефона"
+                            pattern="\+?[0-9\s\-\(\)]+" minlength="11" maxlength="12" required>
+                        <div class="modal-buy__consent-purchase">
+                            <input type="checkbox" name="consent-purchase" id="consent-purchase">
+                            <label for="consent-purchase">Согласие на обработку персональных данных</label>
+                            <button class="offer__buy-btn modal-buy__purchase-btn" type="submit">Купить</button>
+                        </div>
+                        <div class="modal-buy__hint">* После оплаты на указанный номер придет
+                            номер карты и пароль.<br> Карту можно забрать у любого
+                            партнера программы.</div>
+                    </form>
                 </div>
-            </header>
-            <div class="modal-buy__inner_wrapper">
-                <h2 class="modal-buy__title">ПРИОБРЕСТИ КАРТУ</h2>
-                <form action="/purchase" class="modal-buy__purchase_card">
-                    <input type="text" name="name" id="name" placeholder="Имя" required>
-                    <input type="email" name="email" id="email" placeholder="Email" required>
-                    <input type="tel" name="phone" id="phone" placeholder="Номер телефона" pattern="\+?[0-9\s\-\(\)]+"
-                        minlength="11" maxlength="12" required>
-                    <div class="modal-buy__consent-purchase">
-                        <input type="checkbox" name="consent-purchase" id="consent-purchase">
-                        <label for="consent-purchase">Согласие на обработку персональных данных</label>
-                        <button class="offer__buy-btn modal-buy__purchase-btn" type="submit">Купить</button>
-                    </div>
-                    <div class="modal-buy__hint">* После оплаты на указанный номер придет
-                        номер карты и пароль.<br> Карту можно забрать у любого
-                        партнера программы.</div>
-                </form>
             </div>
         </div>
-    </div>
+    <!-- </div> -->
 
     <div class="elastic">
         <div class="white top">
@@ -103,15 +105,19 @@
                                     </div>
                                 </div>
                                 <picture>
-                                    <source media="(max-width: 425px)" srcset="assets/pictures/pay.webp" type="image/webp">
+                                    <source media="(max-width: 425px)" srcset="assets/pictures/pay.webp"
+                                        type="image/webp">
                                     <img class="privileges__picture" src="assets/pictures/pay-test.svg" alt="paycard">
                                     <picture>
-                                        <source media="(max-width: 550px)" srcset="assets/pictures/card-terminal320.png">
-                                        <img class="card-terminal" src="assets/pictures/card-terminal.png" alt="card terminal">
+                                        <source media="(max-width: 550px)"
+                                            srcset="assets/pictures/card-terminal320.png">
+                                        <img class="card-terminal" src="assets/pictures/card-terminal.png"
+                                            alt="card terminal">
                                     </picture>
                                     <picture>
                                         <source media="(max-width: 550px)" srcset="assets/pictures/shadow320.png">
-                                        <img class="terminal-shadow" src="assets/pictures/shadow.png" alt="shadow terminal">
+                                        <img class="terminal-shadow" src="assets/pictures/shadow.png"
+                                            alt="shadow terminal">
                                     </picture>
                                     <picture>
                                         <source media="(max-width: 550px)" srcset="assets/pictures/one-money320.png">
@@ -126,7 +132,8 @@
                             <div class="privileges__item">
 
                                 <picture>
-                                    <img class="privileges__picture" src="assets/pictures/bonus.svg" alt="fireExtinguisher"> <!-- ?? picture ?? -->
+                                    <img class="privileges__picture" src="assets/pictures/bonus.svg"
+                                        alt="fireExtinguisher"> <!-- ?? picture ?? -->
                                     <picture>
                                         <img class="fire" src="assets/pictures/fire.svg" alt="fireExtinguisher">
                                     </picture>
@@ -134,11 +141,6 @@
                                         <img class="fire-shadow" src="assets/pictures/fire-shadow.svg" alt="shadow">
                                     </picture>
                                 </picture>
-                                <!-- <img class="privileges__picture" src="assets/pictures/Bonus.png" alt="bonus"> -->
-                                <!-- <object class="privileges__picture" type="image/svg+xml"
-                                    data="assets/pictures/fireExtinguisher.svg">
-                                    <img src="assets/pictures/fireExtinguisher.webp">
-                                </object> -->
                                 <div class="privileges__text">
                                     <h2 class="privileges__title">Бонусы не сгорают</h2>
                                     <div class="privileges__description">
@@ -162,10 +164,6 @@
                                 </div>
                                 <img class="privileges__picture privileges__picture-right"
                                     src="assets/pictures/Chat.png" alt="chat">
-                                <!-- <object class="privileges__picture privileges__picture-right" type="image/svg+xml"
-                                    data="assets/pictures/chat.svg">
-                                    <img src="assets/pictures/chat.webp">
-                                </object> -->
                             </div>
                         </div>
                         <div class="privilege__ending">
@@ -187,7 +185,7 @@
                         </div>
                         <div class="promo__controls">
                             <div class="promo__buy-btn">
-                                <button class="offer__buy-btn">Приобрести карту</button>
+                                <button class="offer__buy-btn offer__purchase-card">Приобрести карту</button>
                             </div>
                             <div class="promo__play-btn">
                                 <div class="promo__play-btn-after"></div>
@@ -272,7 +270,7 @@
                 </div>
             </footer>
         </div>
-        <div class="darken bottom" >
+        <div class="darken bottom">
             <header class="header">
                 <div class="container">
                     <div class="header__wrapper">
@@ -479,6 +477,7 @@
             </div>
         </div>
         <svg class="svg-slider" fill="black">
+            <rect />
             <defs>
                 <clipPath id="myPath">
                     <rect />
