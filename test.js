@@ -20,13 +20,13 @@ window.onload = () => {
   white.classList.toggle('active')
   defs.style.display = 'none'
 
-  let sideBarWidth = 0
+  let sideBarWidth = 15
 
-  if (window.innerWidth < 1440 && window.innerWidth > 1366) {
-    sideBarWidth = 15
-  } else {
-    sideBarWidth = 15
-  }
+  // if (window.innerWidth < 1440 && window.innerWidth > 1366) {
+  //   sideBarWidth = 15
+  // } else {
+  //   sideBarWidth = 15
+  // }
 
   tempRect.setAttribute('width', window.innerWidth)
   tempRect.setAttribute('x', -sideBarWidth)
@@ -44,12 +44,12 @@ window.onload = () => {
     tempRect.style.display = 'none'
     defs.style.display = 'block'
 
-    for (let i = 0; i < dark.children.length; i++) {
-      dark.children[i].style.display = 'block'
-    }
-
     if (right) {
       white.classList.toggle('active')
+
+      for (let i = 0; i < dark.children.length; i++) {
+        dark.children[i].style.display = 'block'
+      }
 
       svg.style.right = 'unset'
       svg.style.left = 0
@@ -71,20 +71,20 @@ window.onload = () => {
           tempRect.setAttribute('x', temp - progress)
           window.requestAnimationFrame(step)
         } else {
+          for (let i = 0; i < white.children.length; i++) {
+            white.children[i].style.display = 'none'
+          }
+
           dark.classList.toggle('active')
 
           rect.setAttribute('x', sideBarWidth)
           tempRect.setAttribute('x', 0)
           tempRect.style.display = 'block'
-          tempRect.style.fill = "#fff"
+          tempRect.style.fill = '#fff'
 
           svg.setAttribute('height', document.body.clientHeight)
           tempRect.setAttribute('height', document.body.clientHeight)
           rect.setAttribute('height', document.body.clientHeight)
-
-          for (let i = 0; i < white.children.length; i++) {
-            white.children[i].style.display = 'none'
-          }
 
           defs.style.display = 'none'
         }
@@ -96,12 +96,12 @@ window.onload = () => {
     } else {
       dark.classList.toggle('active')
 
-      svg.style.left = 'unset'
-      svg.style.right = 0
-
       for (let i = 0; i < white.children.length; i++) {
         white.children[i].style.display = 'block'
       }
+
+      svg.style.left = 'unset'
+      svg.style.right = 0
 
       rect.setAttribute('x', sideBarWidth)
       tempRect.setAttribute('x', sideBarWidth)
@@ -131,7 +131,7 @@ window.onload = () => {
           }
 
           tempRect.style.display = 'block'
-          tempRect.style.fill = "#333"
+          tempRect.style.fill = '#333'
           defs.style.display = 'none'
           white.classList.toggle('active')
 
