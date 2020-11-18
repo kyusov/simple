@@ -923,9 +923,6 @@
     z-index: 0;
     top: 8.5%;
   }
-  .darken .promo__controls {
-    padding-left: 74px;
-  }
 }
 
 @media screen and (max-width: 550px) {
@@ -1243,6 +1240,9 @@
   .partners__more-btn span::before {
     width: 100%;
     height: 9px;
+  }
+  .darken .partners__title {
+    width: 100%;
   }
 }
 
@@ -1582,9 +1582,6 @@
   .contacts__social a img {
     width: 4.625rem;
   }
-  .darken .contacts {
-    margin-top: -75px;
-  }
 }
 
 @media screen and (max-width: 550px) {
@@ -1640,6 +1637,11 @@
 }
 
 .elastic .white.active {
+  clip-path: unset;
+  position: static;
+}
+
+.elastic .darken.active {
   clip-path: unset;
   position: static;
 }

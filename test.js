@@ -39,16 +39,18 @@ window.onload = () => {
   svg.setAttribute('height', document.body.clientHeight)
 
   let right = true
+
   svg.addEventListener('click', (e) => {
     tempRect.style.display = 'none'
     defs.style.display = 'block'
-    white.classList.toggle('active')
 
     for (let i = 0; i < dark.children.length; i++) {
       dark.children[i].style.display = 'block'
     }
 
     if (right) {
+      white.classList.toggle('active')
+
       svg.style.right = 'unset'
       svg.style.left = 0
       white.classList.remove('top')
@@ -69,10 +71,16 @@ window.onload = () => {
           tempRect.setAttribute('x', temp - progress)
           window.requestAnimationFrame(step)
         } else {
+          dark.classList.toggle('active')
+
           rect.setAttribute('x', sideBarWidth)
           tempRect.setAttribute('x', 0)
           tempRect.style.display = 'block'
           tempRect.style.fill = "#fff"
+
+          svg.setAttribute('height', document.body.clientHeight)
+          tempRect.setAttribute('height', document.body.clientHeight)
+          rect.setAttribute('height', document.body.clientHeight)
 
           for (let i = 0; i < white.children.length; i++) {
             white.children[i].style.display = 'none'
@@ -86,6 +94,8 @@ window.onload = () => {
 
       right = false
     } else {
+      dark.classList.toggle('active')
+
       svg.style.left = 'unset'
       svg.style.right = 0
 
@@ -110,8 +120,6 @@ window.onload = () => {
         } else {
           rect.setAttribute('x', -sideBarWidth)
           tempRect.setAttribute('x', -sideBarWidth)
-          
-          white.classList.toggle('active')
 
           white.classList.remove('bottom')
           white.classList.add('top')
@@ -126,6 +134,10 @@ window.onload = () => {
           tempRect.style.fill = "#333"
           defs.style.display = 'none'
           white.classList.toggle('active')
+
+          svg.setAttribute('height', document.body.clientHeight)
+          tempRect.setAttribute('height', document.body.clientHeight)
+          rect.setAttribute('height', document.body.clientHeight)
         }
       }
 
