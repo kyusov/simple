@@ -23,9 +23,9 @@ window.onload = () => {
   let sideBarWidth = 0
 
   if (window.innerWidth < 1440 && window.innerWidth > 1366) {
-    sideBarWidth = 50
+    sideBarWidth = 15
   } else {
-    sideBarWidth = 70
+    sideBarWidth = 15
   }
 
   tempRect.setAttribute('width', window.innerWidth)
@@ -42,6 +42,12 @@ window.onload = () => {
   svg.addEventListener('click', (e) => {
     tempRect.style.display = 'none'
     defs.style.display = 'block'
+    white.classList.toggle('active')
+
+    for (let i = 0; i < dark.children.length; i++) {
+      dark.children[i].style.display = 'block'
+    }
+
     if (right) {
       svg.style.right = 'unset'
       svg.style.left = 0
@@ -55,7 +61,7 @@ window.onload = () => {
       let start = null
       function step(timestamp) {
         if (!start) start = timestamp
-        let progress = (timestamp - start) / 30
+        let progress = (timestamp - start) / 60
         let temp = +rect.getAttribute('x')
 
         if (temp - progress > sideBarWidth) {
@@ -64,9 +70,14 @@ window.onload = () => {
           window.requestAnimationFrame(step)
         } else {
           rect.setAttribute('x', sideBarWidth)
-          tempRect.setAttribute('x', sideBarWidth)
+          tempRect.setAttribute('x', 0)
           tempRect.style.display = 'block'
-          
+          tempRect.style.fill = "#fff"
+
+          for (let i = 0; i < white.children.length; i++) {
+            white.children[i].style.display = 'none'
+          }
+
           defs.style.display = 'none'
         }
       }
@@ -78,7 +89,12 @@ window.onload = () => {
       svg.style.left = 'unset'
       svg.style.right = 0
 
+      for (let i = 0; i < white.children.length; i++) {
+        white.children[i].style.display = 'block'
+      }
+
       rect.setAttribute('x', sideBarWidth)
+      tempRect.setAttribute('x', sideBarWidth)
       const windowWidth = window.innerWidth
 
       let start = null
@@ -89,13 +105,27 @@ window.onload = () => {
 
         if (temp < windowWidth - sideBarWidth) {
           rect.setAttribute('x', temp + progress)
+          tempRect.setAttribute('x', temp + progress)
           window.requestAnimationFrame(step)
         } else {
           rect.setAttribute('x', -sideBarWidth)
+          tempRect.setAttribute('x', -sideBarWidth)
+          
+          white.classList.toggle('active')
+
           white.classList.remove('bottom')
           white.classList.add('top')
           dark.classList.remove('top')
           dark.classList.add('bottom')
+
+          for (let i = 0; i < dark.children.length; i++) {
+            dark.children[i].style.display = 'none'
+          }
+
+          tempRect.style.display = 'block'
+          tempRect.style.fill = "#333"
+          defs.style.display = 'none'
+          white.classList.toggle('active')
         }
       }
 
