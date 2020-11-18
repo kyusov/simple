@@ -12,38 +12,6 @@
 </head>
 
 <body>
-    <!-- <div class="overlay"> -->
-        <!-- <div class="modal-buy">
-            <div class="modal-buy__wrapper">
-                <header class="header">
-                    <div class="container">
-                        <div class="header__wrapper">
-                            <img src="assets/pictures/logo.svg" alt="Логотип" class="header__logo">
-                            <div class="header__menu-btn">Меню</div>
-                        </div>
-                    </div>
-                </header>
-                <div class="modal-buy__inner_wrapper">
-                    <h2 class="modal-buy__title">ПРИОБРЕСТИ КАРТУ</h2>
-                    <form action="/purchase" class="modal-buy__purchase_card">
-                        <input type="text" name="name" id="name" placeholder="Имя" required>
-                        <input type="email" name="email" id="email" placeholder="Email" required>
-                        <input type="tel" name="phone" id="phone" placeholder="Номер телефона"
-                            pattern="\+?[0-9\s\-\(\)]+" minlength="11" maxlength="18" required>
-                        <div class="modal-buy__consent-purchase">
-                            <input type="checkbox" name="consent-purchase" id="consent-purchase">
-                            <label for="consent-purchase">Согласие на обработку персональных данных</label>
-                            <button class="offer__buy-btn modal-buy__purchase-btn" type="submit">Купить</button>
-                        </div>
-                        <div class="modal-buy__hint">* После оплаты на указанный номер придет
-                            номер карты и пароль.<br> Карту можно забрать у любого
-                            партнера программы.</div>
-                    </form>
-                </div>
-            </div>
-        </div> -->
-    <!-- </div> -->
-
     <div class="elastic">
         <div class="white top">
             <header class="header">
@@ -56,28 +24,27 @@
             </header>
             <div class="marquee">
                 <img class="marquee__img" src="assets/pictures/rollText.svg" alt="rolling text">
-                <!-- <img class="marquee__img" src="assets/pictures/rollText.svg" alt="rolling text"> -->
             </div>
             <div class="offer">
                 <div class="container">
-                    <div class="offer__wrapper">
+                    <div class="offer__container">
                         <picture>
-                            <!-- <source srcset="assets/pictures/card.webp" type="image/webp"> -->
                             <img src="assets/pictures/card.png" alt="Карта Проще" class="offer__card">
-                            <!-- <picture>
-                                <source srcset="assets/pictures/egg-left.webp" type="image/webp">
-                                <img src="assets/pictures/egg-left.png" alt="egg" class="offer__egg offer__egg-left">
-                            </picture>
-                            <picture>
-                                <source srcset="assets/pictures/egg-right.webp" type="image/webp">
-                                <img src="assets/pictures/egg-right.png" alt="egg" class="offer__egg offer__egg-right">
-                            </picture>
-                            <picture>
-                                <source srcset="assets/pictures/egg-bottom.webp" type=image/webp>
-                                <img src="assets/pictures/egg-bottom.png" alt="egg"
-                                    class="offer__egg offer__egg-bottom">
-                            </picture> -->
                         </picture>
+                        <picture>
+                            <source srcset="assets/pictures/egg-left.webp" type="image/webp">
+                            <img src="assets/pictures/egg-left.png" alt="egg" class="offer__eggs offer__egg-left">
+                        </picture>
+                        <picture>
+                            <source srcset="assets/pictures/egg-right.webp" type="image/webp">
+                            <img src="assets/pictures/egg-right.png" alt="egg" class="offer__eggs offer__egg-right">
+                        </picture>
+                        <picture>
+                            <source srcset="assets/pictures/egg-bottom.webp" type=image/webp>
+                            <img src="assets/pictures/egg-bottom.png" alt="egg" class="offer__eggs offer__egg-bottom">
+                        </picture>
+                    </div>
+                    <div class="offer__btn-wrapper">
                         <button class="offer__buy-btn offer__purchase-card">Приобрести карту</button>
                     </div>
                 </div>
@@ -288,23 +255,23 @@
                 <div class="container">
                     <div class="offer__wrapper">
                         <picture>
-                            <source srcset="assets/pictures/bag-left.webp">
-                            <img src="assets/pictures/bag-left.png" alt="bag"
-                                class="offer__egg offer__egg-left offer__bag offer__bag-left">
-                        </picture>
-                        <picture>
-                            <source srcset="assets/pictures/bag-right.webp">
-                            <img src="assets/pictures/bag-right.png" alt="bag"
-                                class="offer__egg offer__egg-right offer__bag offer__bag-right">
-                        </picture>
-                        <picture>
-                            <source srcset="assets/pictures/bag-bottom.webp">
-                            <img src="assets/pictures/bag-bottom.png" alt="bag"
-                                class="offer__egg offer__egg-bottom offer__bag offer__bag-bottom">
-                        </picture>
-                        <picture>
                             <source srcset="assets/pictures/card.webp">
                             <img src="assets/pictures/card.png" alt="Карта Проще" class="offer__card">
+                            <picture>
+                                <source srcset="assets/pictures/bag-left.webp">
+                                <img src="assets/pictures/bag-left.png" alt="bag"
+                                    class="offer__egg offer__egg-left offer__bag offer__bag-left">
+                            </picture>
+                            <picture>
+                                <source srcset="assets/pictures/bag-right.webp">
+                                <img src="assets/pictures/bag-right.png" alt="bag"
+                                    class="offer__egg offer__egg-right offer__bag offer__bag-right">
+                            </picture>
+                            <picture>
+                                <source srcset="assets/pictures/bag-bottom.webp">
+                                <img src="assets/pictures/bag-bottom.png" alt="bag"
+                                    class="offer__egg offer__egg-bottom offer__bag offer__bag-bottom">
+                            </picture>
                         </picture>
                         <button class="offer__buy-btn offer__partner-btn">Стать партнером</button>
                     </div>

@@ -149,7 +149,7 @@ window.onload = () => {
 
   // modals
   const buyCardBtns = [...document.querySelectorAll('.offer__purchase-card')]
-  const overlay = document.querySelector('.modal-buy')
+  // const overlay = document.querySelector('.modal-buy')
   const becomePartnerBtn = document.querySelector('.offer__partner-btn')
 
   for (let i = 0; i < buyCardBtns.length; i++) {
@@ -164,13 +164,13 @@ window.onload = () => {
     })
   }
 
-  overlay.addEventListener('click', (e) => {
-    if (
-      e.target.classList.contains('modal-buy') ||
-      e.target.classList.contains('modal-buy__inner_wrapper')
-    ) {
-      document.body.style.overflowY = 'unset'
-      overlay.classList.remove('active')
-    }
-  })
+  // overlay.addEventListener('click', (e) => {
+  //   if (
+  //     e.target.classList.contains('modal-buy') ||
+  //     e.target.classList.contains('modal-buy__inner_wrapper')
+  //   ) {
+  //     document.body.style.overflowY = 'unset'
+  //     overlay.classList.remove('active')
+  //   }
+  // })
 }
