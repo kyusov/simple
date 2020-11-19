@@ -178,7 +178,7 @@
   position: relative;
 }
 
-.offer__buy-btn:before {
+.offer__buy-btn::before {
   content: ' ';
   position: absolute;
   bottom: -10px;
@@ -197,7 +197,7 @@
   -webkit-transform: translate(5px, 10px);
 }
 
-.offer__buy-btn:active:before {
+.offer__buy-btn:active::before {
   content: none;
 }
 

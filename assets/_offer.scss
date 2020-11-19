@@ -68,7 +68,7 @@
 
     position: relative;
 
-    &:before {
+    &::before {
       content: ' ';
       position: absolute;
       bottom: -10px;
@@ -86,7 +86,7 @@
     &:active {
       transform: translate(5px, 10px);
       -webkit-transform: translate(5px, 10px);
-      &:before {
+      &::before {
         content: none;
       }
     }
