@@ -189,6 +189,7 @@
   width: 100%;
   height: 100%;
   z-index: -1;
+  background-color: #fff;
 }
 
 .offer__buy-btn:active {
@@ -302,59 +303,44 @@
   justify-content: flex-end;
 }
 
-.privilege .privileges__item > picture {
+.privilege .privileges__img {
+  display: flex;
   position: relative;
+  width: 100%;
 }
 
-.privilege .privileges__item .card-terminal,
-.privilege .privileges__item .terminal-shadow,
-.privilege .privileges__item .one-money,
-.privilege .privileges__item .two-money,
-.privilege .privileges__item .fire,
-.privilege .privileges__item .fire-shadow {
+.privilege .privileges__img img:not(:first-child) {
   position: absolute;
 }
 
-.privilege .privileges__item .card-terminal {
-  bottom: 24%;
-  right: 6%;
+.privilege .privileges__img .card-terminal {
+  width: 50%;
+  right: 5%;
+  bottom: 20%;
   z-index: 1;
   animation: infinite 4s ease terminal;
 }
 
-.privilege .privileges__item .terminal-shadow {
-  bottom: 14%;
-  right: 5%;
+.privilege .privileges__img .terminal-shadow {
+  width: 40%;
+  bottom: 17%;
+  right: 10%;
   z-index: 0;
   animation: infinite 4s 0.2s ease shadow;
 }
 
-.privilege .privileges__item .one-money {
-  left: 34%;
+.privilege .privileges__img .one-money {
+  width: 9%;
   top: 44%;
+  left: 17%;
   animation: infinite 3s 1s ease oneMoney;
 }
 
-.privilege .privileges__item .two-money {
-  left: 25%;
-  bottom: 12.4%;
+.privilege .privileges__img .two-money {
+  width: 9%;
+  bottom: 10%;
+  left: 6%;
   animation: infinite 3s 2s ease oneMoney;
-}
-
-.privilege .privileges__item .fire {
-  left: 8%;
-  bottom: 40%;
-  z-index: 1;
-  animation: infinite 5s ease fire;
-}
-
-.privilege .privileges__item .fire-shadow {
-  left: 14%;
-  bottom: 40%;
-  z-index: 0;
-  animation: infinite 5s ease fireShadow;
-  transform-origin: center;
-  transform-box: fill-box;
 }
 
 .privilege .privileges__text {
@@ -363,6 +349,12 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
+  margin-right: 100px;
+}
+
+.privilege .privileges__text:nth-child(2) {
+  margin-right: 0;
+  margin-left: 100px;
 }
 
 .privilege .privileges__description {
@@ -380,12 +372,8 @@
 }
 
 .privilege .privileges__picture {
-  width: 410px;
-  margin-left: 100px;
-}
-
-.privilege .privileges__picture:nth-child(1) {
-  margin-right: 100px;
+  position: relative;
+  width: 100%;
 }
 
 @keyframes coin {
@@ -565,7 +553,7 @@
     margin-top: 92px;
   }
   .privilege .privileges__text {
-    margin-top: 40px;
+    margin: 40px 0 0 0;
     max-width: 231px;
     border-bottom: 1px solid black;
   }
@@ -581,8 +569,11 @@
   .privilege .privileges__description p {
     margin-top: 5px;
   }
+  .privilege .privileges__img {
+    width: 60%;
+  }
   .privilege .privileges__picture {
-    width: 230px;
+    width: 100%;
   }
   .privilege__ending {
     margin-top: 60px;
@@ -605,7 +596,7 @@
     transform: translate(0, 0);
   }
   50% {
-    transform: translate(0, -50px);
+    transform: translate(0, -15%);
   }
   100% {
     transform: translate(0, 0);
@@ -614,13 +605,13 @@
 
 @keyframes shadow {
   0% {
-    transform: scale(1);
-  }
-  50% {
     transform: scale(1.25);
   }
-  100% {
+  50% {
     transform: scale(1);
+  }
+  100% {
+    transform: scale(1.25);
   }
 }
 
@@ -629,7 +620,7 @@
     transform: translate(0, 0);
   }
   50% {
-    transform: translate(0, -30px);
+    transform: translate(0, -50%);
   }
   100% {
     transform: translate(0, 0);
