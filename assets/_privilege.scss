@@ -24,7 +24,6 @@
       -webkit-text-stroke: unset;
       color: $color-text;
     }
-
   }
 
   &__title {
@@ -107,12 +106,10 @@
       }
     }
 
-
     &__img {
       display: flex;
       position: relative;
       width: 100%;
-      
 
       img:not(:first-child) {
         position: absolute;
@@ -205,14 +202,14 @@
   }
 }
 
-
 .darken {
   .privilege {
     &__header {
       color: $color-text;
-
+      -webkit-text-stroke: 3px #fff;
       span {
         color: $color-white;
+        -webkit-text-stroke: unset;
       }
     }
 
@@ -222,6 +219,7 @@
 
     &__sup_title {
       color: $color-text;
+      -webkit-text-stroke: 3px #fff;
     }
 
     .privileges {
@@ -229,8 +227,51 @@
         color: $color-white;
       }
 
+      &__text {
+        width: 85%;
+        margin: 0;
+      }
+
       &__description {
         color: $color-white;
+      }
+
+      .magnet {
+        width: 75%;
+      }
+
+      .smiles {
+        max-width: 229px;
+        width: 50%;
+        right: -3%;
+        bottom: 24%;
+        animation: infinite 4s 0.2s ease smiles;
+      }
+
+      .smiles-faster {
+        width: 30%;
+        right: -3%;
+        animation: infinite 4s ease smiles-faster;
+      }
+
+      .basket-front {
+        z-index: 3;
+      }
+
+      .basket-front,
+      .basket-back {
+        width: 60%;
+        animation-iteration-count: 1;
+        animation: 1s cubic-bezier(0.01, 0, 0.15, 0.99) basket;
+      }
+
+      .baket-bag-big {
+        max-width: 149px;
+        width: 30%;
+        left: 15%;
+        bottom: 25%;
+        animation-iteration-count: 1;
+        animation: 2s ease bag-big;
       }
     }
 
@@ -281,27 +322,27 @@
           bottom: 24%;
           right: 6%;
         }
-  
+
         .terminal-shadow {
           bottom: 14%;
           right: 5%;
         }
-  
+
         .one-money {
           left: 17%;
           top: 44%;
         }
-  
+
         .two-money {
           left: 6.4%;
           bottom: 12.4%;
         }
-  
+
         .fire {
           left: -8%;
           bottom: 40%;
         }
-  
+
         .fire-shadow {
           left: 3%;
           bottom: 40%;
@@ -333,6 +374,18 @@
 
       span {
         -webkit-text-stroke: 2px #333;
+      }
+    }
+  }
+
+  .darken {
+    .privilege {
+      &__header {
+        -webkit-text-stroke: 2px #fff;
+      }
+
+      &__sup_title {
+        -webkit-text-stroke: 2px #fff;
       }
     }
   }
@@ -426,9 +479,21 @@
       margin-top: 20px;
       font-size: 36px;
       line-height: 42px;
-      
+
       span {
         -webkit-text-stroke: 1px #333;
+      }
+    }
+  }
+
+  .darken {
+    .privilege {
+      &__header {
+        -webkit-text-stroke: 1px #fff;
+      }
+
+      &__sup_title {
+        -webkit-text-stroke: 1px #fff;
       }
     }
   }
@@ -493,5 +558,78 @@
 
   100% {
     transform: scale(1);
+  }
+}
+
+@keyframes smiles {
+  0% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+
+  40% {
+    opacity: 0;
+  }
+
+  70% {
+    transform: translate(-30%, -10%);
+  }
+
+  85% {
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes smiles-faster {
+  0% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+
+  60% {
+    opacity: 0;
+  }
+
+  65% {
+    transform: translate(-30%, -10%);
+    opacity: 0;
+  }
+
+  90% {
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes basket {
+  0% {
+    opacity: 0;
+    transform: translate(-60%, -38%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes bag-big {
+  0% {
+    opacity: 0;
+    transform: translateY(-50%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }

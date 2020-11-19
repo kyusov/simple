@@ -233,39 +233,37 @@
             </div>
             <div class="offer">
                 <div class="container">
-                    <div class="offer__wrapper">
+                    <div class="offer__container">
                         <picture>
-                            <source srcset="assets/pictures/card.webp">
                             <img src="assets/pictures/card.png" alt="Карта Проще" class="offer__card">
-                            <picture>
-                                <source srcset="assets/pictures/bag-left.webp">
-                                <img src="assets/pictures/bag-left.png" alt="bag"
-                                    class="offer__egg offer__egg-left offer__bag offer__bag-left">
-                            </picture>
-                            <picture>
-                                <source srcset="assets/pictures/bag-right.webp">
-                                <img src="assets/pictures/bag-right.png" alt="bag"
-                                    class="offer__egg offer__egg-right offer__bag offer__bag-right">
-                            </picture>
-                            <picture>
-                                <source srcset="assets/pictures/bag-bottom.webp">
-                                <img src="assets/pictures/bag-bottom.png" alt="bag"
-                                    class="offer__egg offer__egg-bottom offer__bag offer__bag-bottom">
-                            </picture>
                         </picture>
-                        <button class="offer__buy-btn offer__partner-btn">Стать партнером</button>
+                        <picture>
+                            <source srcset="assets/pictures/bag-left.webp" type="image/webp">
+                            <img src="assets/pictures/bag-left.png" alt="egg" class="offer__eggs offer__bag-left">
+                        </picture>
+                        <picture>
+                            <source srcset="assets/pictures/bag-right.webp" type="image/webp">
+                            <img src="assets/pictures/bag-right.png" alt="egg" class="offer__eggs offer__bag-right">
+                        </picture>
+                        <picture>
+                            <source srcset="assets/pictures/bag-bottom.webp" type=image/webp>
+                            <img src="assets/pictures/bag-bottom.png" alt="egg" class="offer__eggs offer__bag-bottom">
+                        </picture>
+                    </div>
+                    <div class="offer__btn-wrapper">
+                        <button class="offer__buy-btn offer__purchase-card">Стать партнером</button>
                     </div>
                 </div>
             </div>
             <div class="privilege">
                 <div class="container">
                     <div class="privilege__wrapper">
-                        <div class="privilege__header stroke-3-white"><span class="stroke-none">ПРОЩЕ</span>ЧЕМ<br>ВЫ
+                        <div class="privilege__header"><span>ПРОЩЕ</span>ЧЕМ<br>ВЫ
                             ДУМАЕТЕ
                         </div>
                         <div class="privilege__title">
                             <h1 class="privilege__sub_title">ПОТОМУ ЧТО</h1>
-                            <p class="privilege__sup_title stroke-3-white">С бонусной системой:</p>
+                            <p class="privilege__sup_title">С бонусной системой:</p>
                         </div>
                         <div class="privileges">
                             <div class="privileges__item">
@@ -276,13 +274,18 @@
                                         </p>
                                     </div>
                                 </div>
-
-                                <object class="privileges__picture" type="image/svg+xml" data="assets/pictures/pay.svg">
-                                    <img src="assets/pictures/pay.webp">
-                                </object>
+                                <div class="privileges__img">
+                                    <img class="privileges__picture magnet" src="assets/pictures/magnet.svg" alt="magnet">
+                                    <img class="smiles" src="assets/pictures/smiles.svg" alt="smiles">
+                                    <img class="smiles smiles-faster" src="assets/pictures/smiles-faster.svg" alt="smiles">
+                                </div>
                             </div>
                             <div class="privileges__item">
-                                <img class="privileges__picture" src="assets/pictures/Bonus.png" alt="bonus">
+                                <div class="privileges__img">
+                                    <img class="privileges__picture basket-front" src="assets/pictures/basket-front.svg" alt="basket">
+                                    <img class="privileges__picture basket-back" src="assets/pictures/basket-back.svg" alt="basket">
+                                    <img class="baket-bag-big" src="assets/pictures/bag-basket-big.svg" alt="basket bag">
+                                </div>
                                 <div class="privileges__text">
                                     <h2 class="privileges__title">Повторные покупки</h2>
                                     <div class="privileges__description">

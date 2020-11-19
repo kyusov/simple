@@ -205,6 +205,28 @@
   cursor: pointer;
 }
 
+.darken .offer__bag-left {
+  width: 23%;
+  max-width: 409px;
+  left: 13%;
+  bottom: -10%;
+}
+
+.darken .offer__bag-right {
+  width: 20%;
+  max-width: 313px;
+  bottom: -10%;
+  right: 15%;
+}
+
+.darken .offer__bag-bottom {
+  width: 15%;
+  max-width: 242px;
+  top: -17%;
+  right: 15%;
+  z-index: -1;
+}
+
 .privilege {
   margin-top: 83px;
 }
@@ -403,10 +425,12 @@
 
 .darken .privilege__header {
   color: #333333;
+  -webkit-text-stroke: 3px #fff;
 }
 
 .darken .privilege__header span {
   color: #fefefe;
+  -webkit-text-stroke: unset;
 }
 
 .darken .privilege__sub_title {
@@ -415,14 +439,58 @@
 
 .darken .privilege__sup_title {
   color: #333333;
+  -webkit-text-stroke: 3px #fff;
 }
 
 .darken .privilege .privileges__title {
   color: #fefefe;
 }
 
+.darken .privilege .privileges__text {
+  width: 85%;
+  margin: 0;
+}
+
 .darken .privilege .privileges__description {
   color: #fefefe;
+}
+
+.darken .privilege .privileges .magnet {
+  width: 75%;
+}
+
+.darken .privilege .privileges .smiles {
+  max-width: 229px;
+  width: 50%;
+  right: -3%;
+  bottom: 24%;
+  animation: infinite 4s 0.2s ease smiles;
+}
+
+.darken .privilege .privileges .smiles-faster {
+  width: 30%;
+  right: -3%;
+  animation: infinite 4s ease smiles-faster;
+}
+
+.darken .privilege .privileges .basket-front {
+  z-index: 3;
+}
+
+.darken .privilege .privileges .basket-front,
+.darken .privilege .privileges .basket-back {
+  width: 60%;
+  animation-iteration-count: 1;
+  animation: 1s cubic-bezier(0.01, 0, 0.15, 0.99) basket;
+}
+
+.darken .privilege .privileges .baket-bag-big {
+  max-width: 149px;
+  width: 30%;
+  left: 15%;
+  bottom: 25%;
+  animation-iteration-count: 1;
+  animation: 2s ease bag-big;
 }
 
 .darken .privilege__text {
@@ -505,6 +573,12 @@
   .privilege__count span {
     -webkit-text-stroke: 2px #333;
   }
+  .darken .privilege__header {
+    -webkit-text-stroke: 2px #fff;
+  }
+  .darken .privilege__sup_title {
+    -webkit-text-stroke: 2px #fff;
+  }
 }
 
 @media screen and (max-width: 550px) {
@@ -583,6 +657,12 @@
   .privilege__count span {
     -webkit-text-stroke: 1px #333;
   }
+  .darken .privilege__header {
+    -webkit-text-stroke: 1px #fff;
+  }
+  .darken .privilege__sup_title {
+    -webkit-text-stroke: 1px #fff;
+  }
 }
 
 @keyframes terminal {
@@ -642,6 +722,69 @@
   }
   100% {
     transform: scale(1);
+  }
+}
+
+@keyframes smiles {
+  0% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+  40% {
+    opacity: 0;
+  }
+  70% {
+    transform: translate(-30%, -10%);
+  }
+  85% {
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes smiles-faster {
+  0% {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+  60% {
+    opacity: 0;
+  }
+  65% {
+    transform: translate(-30%, -10%);
+    opacity: 0;
+  }
+  90% {
+    transform: translate(0, 0);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes basket {
+  0% {
+    opacity: 0;
+    transform: translate(-60%, -38%);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes bag-big {
+  0% {
+    opacity: 0;
+    transform: translateY(-50%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 

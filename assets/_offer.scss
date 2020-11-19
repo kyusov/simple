@@ -19,7 +19,6 @@
 
   &__eggs {
     position: absolute;
-
     z-index: 1;
   }
 
@@ -93,6 +92,34 @@
 
     &:hover {
       cursor: pointer;
+    }
+  }
+}
+
+.darken {
+  .offer {
+    &__bag {
+      &-left {
+        width: 23%;   
+        max-width: 409px;
+        left: 13%;
+        bottom: -10%;
+      }
+
+      &-right {
+        width: 20%;
+        max-width: 313px;
+        bottom: -10%;
+        right: 15%;
+      }
+
+      &-bottom {
+        width: 15%;
+        max-width: 242px;
+        top: -17%;
+        right: 15%;
+        z-index: -1;
+      }
     }
   }
 }
