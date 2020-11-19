@@ -152,25 +152,15 @@ window.onload = () => {
   // const overlay = document.querySelector('.modal-buy')
   const becomePartnerBtn = document.querySelector('.offer__partner-btn')
 
-  for (let i = 0; i < buyCardBtns.length; i++) {
-    buyCardBtns[i].addEventListener('click', (e) => {
-      if (overlay.classList.contains('active')) {
-        document.body.style.overflowY = 'unset'
-        overlay.classList.remove('active')
-      } else {
-        document.body.style.overflowY = 'hidden'
-        overlay.classList.add('active')
-      }
-    })
-  }
-
-  // overlay.addEventListener('click', (e) => {
-  //   if (
-  //     e.target.classList.contains('modal-buy') ||
-  //     e.target.classList.contains('modal-buy__inner_wrapper')
-  //   ) {
-  //     document.body.style.overflowY = 'unset'
-  //     overlay.classList.remove('active')
-  //   }
-  // })
+  // for (let i = 0; i < buyCardBtns.length; i++) {
+  //   buyCardBtns[i].addEventListener('click', (e) => {
+  //     if (overlay.classList.contains('active')) {
+  //       document.body.style.overflowY = 'unset'
+  //       overlay.classList.remove('active')
+  //     } else {
+  //       document.body.style.overflowY = 'hidden'
+  //       overlay.classList.add('active')
+  //     }
+  //   })
+  // }
 }

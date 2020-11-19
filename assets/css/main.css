@@ -1107,6 +1107,10 @@
   }
 }
 
+.contacts {
+  padding-bottom: 30px;
+}
+
 .contacts__wrapper {
   max-width: 1240px;
   margin: 97px auto 0 auto;
