@@ -327,6 +327,8 @@
   right: 10%;
   z-index: 0;
   animation: infinite 4s 0.2s ease shadow;
+  transform-origin: center;
+  transform-box: fill-box;
 }
 
 .privilege .privileges__img .one-money {
@@ -341,6 +343,23 @@
   bottom: 10%;
   left: 6%;
   animation: infinite 3s 2s ease oneMoney;
+}
+
+.privilege .privileges__img .fire {
+  width: 20%;
+  bottom: 40%;
+  left: 0;
+  z-index: 1;
+  animation: infinite 4s ease fire;
+}
+
+.privilege .privileges__img .fire-shadow {
+  width: 20%;
+  left: 5%;
+  bottom: 40%;
+  animation: infinite 4s ease fireShadow;
+  transform-origin: center;
+  transform-box: fill-box;
 }
 
 .privilege .privileges__text {
@@ -374,54 +393,6 @@
 .privilege .privileges__picture {
   position: relative;
   width: 100%;
-}
-
-@keyframes coin {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-60px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-
-@keyframes coin-two {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-35px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-
-@keyframes card {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-35px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-
-@keyframes shadow-anim {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(0.85);
-  }
-  100% {
-    transform: scale(1);
-  }
 }
 
 .darken .privilege__header {
@@ -553,9 +524,13 @@
     margin-top: 92px;
   }
   .privilege .privileges__text {
-    margin: 40px 0 0 0;
+    margin-top: 40px;
+    margin-right: 0;
     max-width: 231px;
     border-bottom: 1px solid black;
+  }
+  .privilege .privileges__text:nth-child(2) {
+    margin-left: 0;
   }
   .privilege .privileges__title {
     font-size: 18px;
@@ -596,7 +571,7 @@
     transform: translate(0, 0);
   }
   50% {
-    transform: translate(0, -15%);
+    transform: translate(0, -45%);
   }
   100% {
     transform: translate(0, 0);
@@ -620,7 +595,7 @@
     transform: translate(0, 0);
   }
   50% {
-    transform: translate(0, -50%);
+    transform: translate(0, -100%);
   }
   100% {
     transform: translate(0, 0);
@@ -632,7 +607,7 @@
     transform: translate(0, 0);
   }
   50% {
-    transform: translate(0, -15px);
+    transform: translate(0, -30%);
   }
   100% {
     transform: translate(0, 0);
