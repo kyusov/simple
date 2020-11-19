@@ -18,10 +18,13 @@
     justify-content: center;
     align-items: flex-start;
     flex-direction: column;
+    -webkit-text-stroke: 3px #333;
 
     span {
+      -webkit-text-stroke: unset;
       color: $color-text;
     }
+
   }
 
   &__title {
@@ -48,6 +51,7 @@
     margin-top: 20px;
 
     color: $color-white;
+    -webkit-text-stroke: 3px #333;
   }
 
   &__ending {
@@ -73,6 +77,7 @@
 
     span {
       color: $color-white;
+      -webkit-text-stroke: 3px #333;
     }
   }
 
@@ -166,7 +171,7 @@
     }
 
     &__text {
-      max-width: 390px;
+      width: 100%;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
@@ -182,6 +187,8 @@
       margin-top: 30px;
       font-size: 24px;
       line-height: 26px;
+
+      width: 80%;
 
       p {
         margin-top: 15px;
@@ -247,11 +254,17 @@
       line-height: 112px;
       width: 100%;
       padding-left: 82px;
+
+      -webkit-text-stroke: 2px #333;
     }
 
     &__sup_title,
     &__sub_title {
       padding-left: 82px;
+    }
+
+    &__sup_title {
+      -webkit-text-stroke: 2px #333;
     }
 
     .privileges {
@@ -317,6 +330,10 @@
 
     &__count {
       margin: 30px 0 0 0;
+
+      span {
+        -webkit-text-stroke: 2px #333;
+      }
     }
   }
 }
@@ -329,6 +346,8 @@
       padding: 0 0 0 44px;
       font-size: 36px;
       line-height: 42px;
+
+      -webkit-text-stroke: 1px #333;
     }
 
     &__title {
@@ -346,6 +365,7 @@
       line-height: 42px;
       padding: 0;
       margin-top: 5px;
+      -webkit-text-stroke: 1px #333;
     }
 
     .privileges {
@@ -374,6 +394,8 @@
         margin-top: 21px;
         font-size: 14px;
         line-height: 16px;
+
+        width: 100%;
 
         p {
           margin-top: 5px;
@@ -404,6 +426,10 @@
       margin-top: 20px;
       font-size: 36px;
       line-height: 42px;
+      
+      span {
+        -webkit-text-stroke: 1px #333;
+      }
     }
   }
 }

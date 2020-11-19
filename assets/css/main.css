@@ -224,9 +224,11 @@
   justify-content: center;
   align-items: flex-start;
   flex-direction: column;
+  -webkit-text-stroke: 3px #333;
 }
 
 .privilege__header span {
+  -webkit-text-stroke: unset;
   color: #333333;
 }
 
@@ -251,6 +253,7 @@
   line-height: 84px;
   margin-top: 20px;
   color: #fefefe;
+  -webkit-text-stroke: 3px #333;
 }
 
 .privilege__ending {
@@ -276,6 +279,7 @@
 
 .privilege__count span {
   color: #fefefe;
+  -webkit-text-stroke: 3px #333;
 }
 
 .privilege .privileges, .privilege__title, .privilege__ending {
@@ -363,7 +367,7 @@
 }
 
 .privilege .privileges__text {
-  max-width: 390px;
+  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -380,6 +384,7 @@
   margin-top: 30px;
   font-size: 24px;
   line-height: 26px;
+  width: 80%;
 }
 
 .privilege .privileges__description p {
@@ -437,9 +442,13 @@
     line-height: 112px;
     width: 100%;
     padding-left: 82px;
+    -webkit-text-stroke: 2px #333;
   }
   .privilege__sup_title, .privilege__sub_title {
     padding-left: 82px;
+  }
+  .privilege__sup_title {
+    -webkit-text-stroke: 2px #333;
   }
   .privilege .privileges__item {
     margin-top: 150px;
@@ -492,6 +501,9 @@
   .privilege__count {
     margin: 30px 0 0 0;
   }
+  .privilege__count span {
+    -webkit-text-stroke: 2px #333;
+  }
 }
 
 @media screen and (max-width: 550px) {
@@ -502,6 +514,7 @@
     padding: 0 0 0 44px;
     font-size: 36px;
     line-height: 42px;
+    -webkit-text-stroke: 1px #333;
   }
   .privilege__title {
     padding: 0 44px;
@@ -516,6 +529,7 @@
     line-height: 42px;
     padding: 0;
     margin-top: 5px;
+    -webkit-text-stroke: 1px #333;
   }
   .privilege .privileges {
     margin-top: 50px;
@@ -540,6 +554,7 @@
     margin-top: 21px;
     font-size: 14px;
     line-height: 16px;
+    width: 100%;
   }
   .privilege .privileges__description p {
     margin-top: 5px;
@@ -563,6 +578,9 @@
     margin-top: 20px;
     font-size: 36px;
     line-height: 42px;
+  }
+  .privilege__count span {
+    -webkit-text-stroke: 1px #333;
   }
 }
 
@@ -642,6 +660,7 @@
   line-height: 123px;
   color: #fefefe;
   letter-spacing: 1px;
+  -webkit-text-stroke: 3px #333;
 }
 
 .promo__text .hide {
@@ -656,9 +675,10 @@
 .promo__text span span {
   z-index: -1;
   left: 0;
-  top: -1.5%;
+  top: -3.3%;
   position: absolute;
   color: #fefefe;
+  -webkit-text-stroke: 2px #333;
 }
 
 .promo__controls {
@@ -733,6 +753,7 @@
     font-size: 96px;
     line-height: 105px;
     padding-left: 76px;
+    -webkit-text-stroke: 2px #333;
   }
   .promo__text .hide {
     display: unset;
@@ -767,6 +788,10 @@
     padding-left: 44px;
     font-size: 36px;
     line-height: 42px;
+    -webkit-text-stroke: 1px #333;
+  }
+  .promo__text span span {
+    -webkit-text-stroke: 1px #333;
   }
   .promo__controls {
     margin-top: 50px;
@@ -777,6 +802,7 @@
   }
   .promo__buy-btn {
     margin: 0;
+    margin-top: 50px;
   }
 }
 
