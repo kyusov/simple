@@ -38,6 +38,8 @@
     font-weight: 900;
     line-height: 84px;
     color: $color-text;
+
+    text-decoration: none;
   }
 
   &__text {
@@ -302,7 +304,6 @@
     &__phone {
       font-size: 64px;
       line-height: 64px;
-      color: $color-text;
     }
 
     &__left {
