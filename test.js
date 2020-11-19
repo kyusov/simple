@@ -20,7 +20,7 @@ window.onload = () => {
   white.classList.toggle('active')
   defs.style.display = 'none'
 
-  let sideBarWidth = 15
+  let sideBarWidth = 0
 
   // if (window.innerWidth < 1440 && window.innerWidth > 1366) {
   //   sideBarWidth = 15
