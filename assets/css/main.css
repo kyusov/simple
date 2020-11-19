@@ -194,6 +194,7 @@
 
 .offer__buy-btn:active {
   transform: translate(5px, 10px);
+  -webkit-transform: translate(5px, 10px);
 }
 
 .offer__buy-btn:active:before {
