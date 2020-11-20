@@ -1,3 +1,5 @@
+let smiles = false
+
 window.onload = () => {
   $('.marquee').marquee({
     duration: 15000,
@@ -86,9 +88,7 @@ window.onload = () => {
 
           defs.style.display = 'none'
 
-          $('.smiles').css('animation-play-state', 'running')
-          $('.smiles-faster').css('animation-play-state', 'running')
-
+          smiles = true
           basketAnimation(true)
         }
       }
@@ -147,6 +147,7 @@ window.onload = () => {
 
           cardAnimation(true)
           basketAnimation(false)
+          smiles = false
         }
       }
 
@@ -247,6 +248,16 @@ function fireAnimation(show) {
   }
 }
 
+function smilesAnimation() {
+  if (smiles) {
+    $('.smiles').css('animation-play-state', 'running')
+    $('.smiles-faster').css('animation-play-state', 'running')
+  } else {
+    $('.smiles').css('animation-play-state', 'paused')
+    $('.smiles-faster').css('animation-play-state', 'paused')
+  }
+}
+
 $(document).on('mousewheel touchmove', (e) => {
   const documentHeight = $(document).scrollTop() + window.innerHeight / 0.9
 
@@ -267,6 +278,18 @@ $(document).on('mousewheel touchmove', (e) => {
     fireAnimation(false)
   } else if (documentHeight >= $('.fire').closest('div').offset().top) {
     fireAnimation(true)
+  }
+
+  if (
+    documentHeight >= $('.smiles').closest('div').offset().top * 2 ||
+    documentHeight < $('.smiles').closest('div').offset().top && smiles
+  ) {
+    smiles = false
+    smilesAnimation()
+  } else if (documentHeight >= $('.smiles').closest('div').offset().top) {
+    smiles = true
+    smilesAnimation()
+
   }
 })
 
