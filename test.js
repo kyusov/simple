@@ -13,7 +13,7 @@ window.onload = () => {
   const white = document.querySelector('.white')
   const dark = document.querySelector('.darken')
 
-  white.classList.toggle('active')
+  
   defs.style.display = 'none'
 
   let sideBarWidth = 15
@@ -84,7 +84,7 @@ window.onload = () => {
 
           defs.style.display = 'none'
 
-          basketAnimation()
+          basketAnimation(true)
         }
       }
 
@@ -136,6 +136,8 @@ window.onload = () => {
           svg.setAttribute('height', document.body.clientHeight)
           tempRect.setAttribute('height', document.body.clientHeight)
           rect.setAttribute('height', document.body.clientHeight)
+
+          basketAnimation(false)
         }
       }
 
@@ -146,45 +148,76 @@ window.onload = () => {
   })
 }
 
-function basketAnimation() {
-  $('.basket-front').transition({
-    x: '0',
-    y: '0',
-    opacity: 1,
-    duration: 1000,
-  })
+function basketAnimation(show) {
+  if (show) {
+    $('.basket-front').transition({
+      x: '0',
+      y: '0',
+      opacity: 1,
+      duration: 1000,
+    })
 
-  $('.basket-back').transition({
-    x: '0',
-    y: '0',
-    opacity: 1,
-    duration: 1000,
-  })
+    $('.basket-back').transition({
+      x: '0',
+      y: '0',
+      opacity: 1,
+      duration: 1000,
+    })
 
-  $('.basket-bag-big').transition({
-    x: 0,
-    opacity: 1,
-    duration: 1000,
-    delay: 400,
-  })
+    $('.basket-bag-big').transition({
+      y: '0',
+      opacity: 1,
+      duration: 1000,
+      delay: 400,
+    })
 
-  $('.basket-bag-middle').transition({
-    y: 0,
-    opacity: 1,
-    duration: 1000,
-    delay: 500,
-  })
+    $('.basket-bag-middle').transition({
+      y: '0',
+      opacity: 1,
+      duration: 1000,
+      delay: 500,
+    })
 
-  $('.basket-bag-top').transition({
-    y: 0,
-    opacity: 1,
-    duration: 700,
-    delay: 400,
-  })
+    $('.basket-bag-top').transition({
+      y: '0',
+      opacity: 1,
+      duration: 700,
+      delay: 400,
+    })
+  } else {
+    $('.basket-front').transition({
+      x: '-60%',
+      y: '-38%',
+      opacity: 0,
+    })
+  
+    $('.basket-back').transition({
+      x: '-60%',
+      y: '-38%',
+      opacity: 0,
+    })
+  
+    $('.basket-bag-big').transition({
+      y: '0',
+      opacity: 0,
+    })
+  
+    $('.basket-bag-middle').transition({
+      y: '-150%',
+      opacity: 0,
+    })
+  
+    $('.basket-bag-top').transition({
+      y: '-150%',
+      opacity: 0,
+    })
+  }
 }
 
 $(document).ready(() => {
   const dark = document.querySelector('.darken')
+  const white = document.querySelector('.white')
+  white.classList.toggle('active')
   for (let i = 0; i < dark.children.length; i++) {
     dark.children[i].style.display = 'none'
   }
