@@ -237,6 +237,33 @@ function cardAnimation(show) {
   }
 }
 
+function fireAnimation(show) {
+  if (show) {
+    $('.fire').css('animation-play-state', 'running')
+    $('.fire-shadow').css('animation-play-state', 'running')
+  } else {
+    $('.fire').css('animation-play-state', 'paused')
+    $('.fire-shadow').css('animation-play-state', 'paused')
+  }
+}
+
+$(document).on('mousewheel', (e) => {
+  const documentHeight = $(document).scrollTop() + window.innerHeight / .9
+
+  if (documentHeight >= $('.card-terminal').closest('div').offset().top * 2) {
+    cardAnimation(false)
+  } else if (documentHeight >= $('.card-terminal').closest('div').offset().top) {
+    cardAnimation(true)
+  }
+  if (documentHeight >= $('.fire').closest('div').offset().top * 2) {
+    console.log('False')
+    fireAnimation(false)
+  } else if (documentHeight >= $('.fire').closest('div').offset().top) {
+    console.log('TRUE')
+    fireAnimation(true)
+  } 
+})
+
 $(document).ready(() => {
   const dark = document.querySelector('.darken')
   const white = document.querySelector('.white')
