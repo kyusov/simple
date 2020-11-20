@@ -13,10 +13,6 @@ window.onload = () => {
   const white = document.querySelector('.white')
   const dark = document.querySelector('.darken')
 
-  for (let i = 0; i < dark.children.length; i++) {
-    dark.children[i].style.display = 'none'
-  }
-
   white.classList.toggle('active')
   defs.style.display = 'none'
 
@@ -87,6 +83,8 @@ window.onload = () => {
           rect.setAttribute('height', document.body.clientHeight)
 
           defs.style.display = 'none'
+
+          basketAnimation()
         }
       }
 
@@ -146,21 +144,48 @@ window.onload = () => {
       right = true
     }
   })
-
-  // modals
-  const buyCardBtns = [...document.querySelectorAll('.offer__purchase-card')]
-  // const overlay = document.querySelector('.modal-buy')
-  const becomePartnerBtn = document.querySelector('.offer__partner-btn')
-
-  // for (let i = 0; i < buyCardBtns.length; i++) {
-  //   buyCardBtns[i].addEventListener('click', (e) => {
-  //     if (overlay.classList.contains('active')) {
-  //       document.body.style.overflowY = 'unset'
-  //       overlay.classList.remove('active')
-  //     } else {
-  //       document.body.style.overflowY = 'hidden'
-  //       overlay.classList.add('active')
-  //     }
-  //   })
-  // }
 }
+
+function basketAnimation() {
+  $('.basket-front').transition({
+    x: '0',
+    y: '0',
+    opacity: 1,
+    duration: 1000,
+  })
+
+  $('.basket-back').transition({
+    x: '0',
+    y: '0',
+    opacity: 1,
+    duration: 1000,
+  })
+
+  $('.basket-bag-big').transition({
+    x: 0,
+    opacity: 1,
+    duration: 1000,
+    delay: 400,
+  })
+
+  $('.basket-bag-middle').transition({
+    y: 0,
+    opacity: 1,
+    duration: 1000,
+    delay: 500,
+  })
+
+  $('.basket-bag-top').transition({
+    y: 0,
+    opacity: 1,
+    duration: 700,
+    delay: 400,
+  })
+}
+
+$(document).ready(() => {
+  const dark = document.querySelector('.darken')
+  for (let i = 0; i < dark.children.length; i++) {
+    dark.children[i].style.display = 'none'
+  }
+})

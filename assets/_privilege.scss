@@ -230,6 +230,7 @@
       &__text {
         width: 85%;
         margin: 0;
+        border-color: #fff;
       }
 
       &__description {
@@ -261,17 +262,41 @@
       .basket-front,
       .basket-back {
         width: 60%;
-        animation-iteration-count: 1;
-        animation: 1s cubic-bezier(0.01, 0, 0.15, 0.99) basket;
+        opacity: 0;
+        transform: translate(-60%, -38%);
       }
 
-      .baket-bag-big {
+      .basket-bag-big {
         max-width: 149px;
         width: 30%;
         left: 15%;
         bottom: 25%;
-        animation-iteration-count: 1;
-        animation: 2s ease bag-big;
+        opacity: 0;
+        transform: translateY(-100%);
+      }
+
+      .basket-bag-middle {
+        max-width: 87px;
+        width: 25%;
+        right: 55%;
+        bottom: 25%;
+        opacity: 0;
+        transform: translate(0, -150%);
+      }
+
+      .middle-right {
+        right: 48%;
+        bottom: 20%;
+        opacity: 0;
+      }
+
+      .basket-bag-top {
+        max-width: 87px;
+        width: 20%;
+        right: 59%;
+        bottom: 16%;
+        opacity: 0;
+        transform: translate(0, -150%);
       }
     }
 
@@ -283,6 +308,7 @@
       color: $color-white;
       span {
         color: $color-text;
+        -webkit-text-stroke: 3px #fff;
       }
     }
   }
@@ -385,6 +411,10 @@
       }
 
       &__sup_title {
+        -webkit-text-stroke: 2px #fff;
+      }
+
+      &__count span {
         -webkit-text-stroke: 2px #fff;
       }
     }
@@ -493,6 +523,10 @@
       }
 
       &__sup_title {
+        -webkit-text-stroke: 1px #fff;
+      }
+
+      &__count span {
         -webkit-text-stroke: 1px #fff;
       }
     }
@@ -625,11 +659,26 @@
 @keyframes bag-big {
   0% {
     opacity: 0;
-    transform: translateY(-50%);
+  }
+
+  50% {
+    opacity: 1;
   }
 
   100% {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes middle-bag {
+  0% {
+    opacity: 0;
+    transform: translate(0, -150%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translate(0, 0);
   }
 }
