@@ -248,20 +248,26 @@ function fireAnimation(show) {
 }
 
 $(document).on('mousewheel touchmove', (e) => {
-  const documentHeight = $(document).scrollTop() + window.innerHeight / .9
+  const documentHeight = $(document).scrollTop() + window.innerHeight / 0.9
 
-  if (documentHeight >= $('.card-terminal').closest('div').offset().top * 2) {
+  if (
+    documentHeight >= $('.card-terminal').closest('div').offset().top * 2 ||
+    documentHeight < $('.card-terminal').closest('div').offset().top
+  ) {
     cardAnimation(false)
-  } else if (documentHeight >= $('.card-terminal').closest('div').offset().top) {
+  } else if (
+    documentHeight >= $('.card-terminal').closest('div').offset().top
+  ) {
     cardAnimation(true)
   }
-  if (documentHeight >= $('.fire').closest('div').offset().top * 2) {
-    console.log('False')
+  if (
+    documentHeight >= $('.fire').closest('div').offset().top * 2 ||
+    documentHeight < $('.fire').closest('div').offset().top
+  ) {
     fireAnimation(false)
   } else if (documentHeight >= $('.fire').closest('div').offset().top) {
-    console.log('TRUE')
     fireAnimation(true)
-  } 
+  }
 })
 
 $(document).ready(() => {
