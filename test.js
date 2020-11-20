@@ -1,7 +1,13 @@
 let smiles = false
 
 window.onload = () => {
-  $('.marquee').marquee({
+  const $mf = $('.first').marquee({ // add marquee hide while scroll down
+    duration: 15000,
+    startVisible: true,
+    duplicated: true,
+  })
+
+  const $ms = $('.second').marquee({
     duration: 15000,
     startVisible: true,
     duplicated: true,
@@ -271,6 +277,7 @@ $(document).on('mousewheel touchmove', (e) => {
   ) {
     cardAnimation(true)
   }
+
   if (
     documentHeight >= $('.fire').closest('div').offset().top * 2 ||
     documentHeight < $('.fire').closest('div').offset().top
@@ -289,7 +296,6 @@ $(document).on('mousewheel touchmove', (e) => {
   } else if (documentHeight >= $('.smiles').closest('div').offset().top) {
     smiles = true
     smilesAnimation()
-
   }
 })
 
