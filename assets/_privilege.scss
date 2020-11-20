@@ -121,6 +121,8 @@
         bottom: 20%;
         z-index: 1;
         animation: infinite 4s ease terminal;
+        animation-play-state: paused;
+        -webkit-animation-play-state: paused;
       }
 
       .terminal-shadow {
@@ -131,22 +133,26 @@
         animation: infinite 4s 0.2s ease shadow;
         transform-origin: center;
         transform-box: fill-box;
+        animation-play-state: paused;
+        -webkit-animation-play-state: paused;
       }
 
       .one-money {
         width: 9%;
         top: 44%;
         left: 17%;
-
         animation: infinite 3s 1s ease oneMoney;
+        animation-play-state: paused;
+        -webkit-animation-play-state: paused;
       }
 
       .two-money {
         width: 9%;
         bottom: 10%;
         left: 6%;
-
         animation: infinite 3s 2s ease oneMoney;
+        animation-play-state: paused;
+        -webkit-animation-play-state: paused;
       }
 
       .fire {
@@ -155,6 +161,8 @@
         left: 0;
         z-index: 1;
         animation: infinite 4s ease fire;
+        animation-play-state: paused;
+        -webkit-animation-play-state: paused;
       }
 
       .fire-shadow {
@@ -164,6 +172,8 @@
         animation: infinite 4s ease fireShadow;
         transform-origin: center;
         transform-box: fill-box;
+        animation-play-state: paused;
+        -webkit-animation-play-state: paused;
       }
     }
 
@@ -247,12 +257,16 @@
         right: -3%;
         bottom: 24%;
         animation: infinite 4s 0.2s ease smiles;
+        animation-play-state: paused;
+        -webkit-animation-play-state: paused;
       }
 
       .smiles-faster {
         width: 30%;
         right: -3%;
         animation: infinite 4s ease smiles-faster;
+        animation-play-state: paused;
+        -webkit-animation-play-state: paused;
       }
 
       .basket-front {

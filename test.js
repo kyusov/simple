@@ -13,10 +13,11 @@ window.onload = () => {
   const white = document.querySelector('.white')
   const dark = document.querySelector('.darken')
 
-  
   defs.style.display = 'none'
 
   let sideBarWidth = 15
+
+  cardAnimation(true)
 
   // if (window.innerWidth < 1440 && window.innerWidth > 1366) {
   //   sideBarWidth = 15
@@ -42,6 +43,7 @@ window.onload = () => {
 
     if (right) {
       white.classList.toggle('active')
+      cardAnimation(false)
 
       for (let i = 0; i < dark.children.length; i++) {
         dark.children[i].style.display = 'block'
@@ -83,6 +85,9 @@ window.onload = () => {
           rect.setAttribute('height', document.body.clientHeight)
 
           defs.style.display = 'none'
+
+          $('.smiles').css('animation-play-state', 'running')
+          $('.smiles-faster').css('animation-play-state', 'running')
 
           basketAnimation(true)
         }
@@ -137,6 +142,10 @@ window.onload = () => {
           tempRect.setAttribute('height', document.body.clientHeight)
           rect.setAttribute('height', document.body.clientHeight)
 
+          $('.smiles').css('animation-play-state', 'paused')
+          $('.smiles-faster').css('animation-play-state', 'paused')
+
+          cardAnimation(true)
           basketAnimation(false)
         }
       }
@@ -190,27 +199,41 @@ function basketAnimation(show) {
       y: '-38%',
       opacity: 0,
     })
-  
+
     $('.basket-back').transition({
       x: '-60%',
       y: '-38%',
       opacity: 0,
     })
-  
+
     $('.basket-bag-big').transition({
-      y: '0',
+      y: '-100%',
       opacity: 0,
     })
-  
+
     $('.basket-bag-middle').transition({
       y: '-150%',
       opacity: 0,
     })
-  
+
     $('.basket-bag-top').transition({
       y: '-150%',
       opacity: 0,
     })
+  }
+}
+
+function cardAnimation(show) {
+  if (show) {
+    $('.card-terminal').css('animation-play-state', 'running')
+    $('.terminal-shadow').css('animation-play-state', 'running')
+    $('.one-money').css('animation-play-state', 'running')
+    $('.two-money').css('animation-play-state', 'running')
+  } else {
+    $('.card-terminal').css('animation-play-state', 'paused')
+    $('.terminal-shadow').css('animation-play-state', 'paused')
+    $('.one-money').css('animation-play-state', 'paused')
+    $('.two-money').css('animation-play-state', 'paused')
   }
 }
 

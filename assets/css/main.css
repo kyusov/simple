@@ -346,6 +346,8 @@
   bottom: 20%;
   z-index: 1;
   animation: infinite 4s ease terminal;
+  animation-play-state: paused;
+  -webkit-animation-play-state: paused;
 }
 
 .privilege .privileges__img .terminal-shadow {
@@ -356,6 +358,8 @@
   animation: infinite 4s 0.2s ease shadow;
   transform-origin: center;
   transform-box: fill-box;
+  animation-play-state: paused;
+  -webkit-animation-play-state: paused;
 }
 
 .privilege .privileges__img .one-money {
@@ -363,6 +367,8 @@
   top: 44%;
   left: 17%;
   animation: infinite 3s 1s ease oneMoney;
+  animation-play-state: paused;
+  -webkit-animation-play-state: paused;
 }
 
 .privilege .privileges__img .two-money {
@@ -370,6 +376,8 @@
   bottom: 10%;
   left: 6%;
   animation: infinite 3s 2s ease oneMoney;
+  animation-play-state: paused;
+  -webkit-animation-play-state: paused;
 }
 
 .privilege .privileges__img .fire {
@@ -378,6 +386,8 @@
   left: 0;
   z-index: 1;
   animation: infinite 4s ease fire;
+  animation-play-state: paused;
+  -webkit-animation-play-state: paused;
 }
 
 .privilege .privileges__img .fire-shadow {
@@ -387,6 +397,8 @@
   animation: infinite 4s ease fireShadow;
   transform-origin: center;
   transform-box: fill-box;
+  animation-play-state: paused;
+  -webkit-animation-play-state: paused;
 }
 
 .privilege .privileges__text {
@@ -466,12 +478,16 @@
   right: -3%;
   bottom: 24%;
   animation: infinite 4s 0.2s ease smiles;
+  animation-play-state: paused;
+  -webkit-animation-play-state: paused;
 }
 
 .darken .privilege .privileges .smiles-faster {
   width: 30%;
   right: -3%;
   animation: infinite 4s ease smiles-faster;
+  animation-play-state: paused;
+  -webkit-animation-play-state: paused;
 }
 
 .darken .privilege .privileges .basket-front {
