@@ -247,7 +247,7 @@ function fireAnimation(show) {
   }
 }
 
-$(document).on('mousewheel', (e) => {
+$(document).on('mousewheel touchmove', (e) => {
   const documentHeight = $(document).scrollTop() + window.innerHeight / .9
 
   if (documentHeight >= $('.card-terminal').closest('div').offset().top * 2) {
