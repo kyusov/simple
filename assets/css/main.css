@@ -1724,13 +1724,13 @@
 
 .elastic .top {
   z-index: 2;
-  position: absolute;
+  position: relative;
   clip-path: url("#myPath");
 }
 
 .elastic .bottom {
   z-index: 1;
-  position: relative;
+  position: absolute;
 }
 
 .elastic .svg-slider {

@@ -13,6 +13,8 @@ window.onload = () => {
     duplicated: true,
   })
 
+  $ms.marquee('pause')
+
   const svg = document.querySelector('.svg-slider')
   const tempRect = document.querySelector('.svg-slider > rect')
   const rect = document.querySelector('.svg-slider > defs > clipPath > rect')
@@ -94,6 +96,8 @@ window.onload = () => {
 
           defs.style.display = 'none'
 
+          $ms.marquee('resume')
+          $mf.marquee('pause')
           smiles = true
           basketAnimation(true)
         }
@@ -154,6 +158,9 @@ window.onload = () => {
           cardAnimation(true)
           basketAnimation(false)
           smiles = false
+
+          $ms.marquee('pause')
+          $mf.marquee('resume')
         }
       }
 
