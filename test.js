@@ -1,4 +1,5 @@
 let smiles = false
+let lightTheme = true
 
 window.onload = () => {
   const $mf = $('.first').marquee({
@@ -107,164 +108,6 @@ window.onload = () => {
       },
     })
   })
-
-  //   const svg = document.querySelector('.svg-slider-right')
-  //   const tempRect = document.querySelector('.svg-slider-right > rect')
-  //   const rect = document.querySelector('.svg-slider-right > defs > clipPath > rect')
-  //   const defs = document.querySelector('.svg-slider-right > defs')
-
-  //   const white = document.querySelector('.white')
-  //   const dark = document.querySelector('.darken')
-
-  //   defs.style.display = 'none'
-
-  //   let sideBarWidth = 15
-
-  //   cardAnimation(true)
-
-  //   // if (window.innerWidth < 1440 && window.innerWidth > 1366) {
-  //   //   sideBarWidth = 15
-  //   // } else {
-  //   //   sideBarWidth = 15
-  //   // }
-
-  //   tempRect.setAttribute('width', window.innerWidth)
-  //   tempRect.setAttribute('x', -sideBarWidth)
-  //   tempRect.setAttribute('height', document.body.clientHeight)
-
-  //   rect.setAttribute('width', window.innerWidth)
-  //   rect.setAttribute('x', -sideBarWidth)
-  //   rect.setAttribute('height', document.body.clientHeight)
-  //   svg.setAttribute('width', sideBarWidth)
-  //   svg.setAttribute('height', document.body.clientHeight)
-
-  //   let right = true
-
-  //   svg.addEventListener('click', (e) => {
-  //     tempRect.style.display = 'none'
-  //     defs.style.display = 'block'
-
-  //     if (right) {
-  //       white.classList.toggle('active')
-  //       cardAnimation(false)
-
-  //       for (let i = 0; i < dark.children.length; i++) {
-  //         dark.children[i].style.display = 'block'
-  //       }
-
-  //       svg.style.right = 'unset'
-  //       svg.style.left = 0
-
-  //       white.classList.remove('top')
-  //       white.classList.add('bottom')
-  //       dark.classList.remove('bottom')
-  //       dark.classList.add('top')
-
-  //       rect.setAttribute('x', window.innerWidth - sideBarWidth)
-  //       tempRect.setAttribute('x', window.innerWidth - sideBarWidth)
-
-  //       let start = null
-  //       function step(timestamp) {
-  //         if (!start) start = timestamp
-  //         let progress = (timestamp - start) / 60
-  //         let temp = +rect.getAttribute('x')
-
-  //         if (temp - progress > sideBarWidth) {
-  //           rect.setAttribute('x', temp - progress)
-  //           tempRect.setAttribute('x', temp - progress)
-  //           window.requestAnimationFrame(step)
-  //         } else {
-  //           for (let i = 0; i < white.children.length; i++) {
-  //             white.children[i].style.display = 'none'
-  //           }
-
-  //           dark.classList.toggle('active')
-
-  //           rect.setAttribute('x', sideBarWidth)
-  //           tempRect.setAttribute('x', 0)
-  //           tempRect.style.display = 'block'
-  //           tempRect.style.fill = '#fff'
-
-  //           svg.setAttribute('height', document.body.clientHeight)
-  //           tempRect.setAttribute('height', document.body.clientHeight)
-  //           rect.setAttribute('height', document.body.clientHeight)
-
-  //           defs.style.display = 'none'
-
-  //           $ms.marquee('resume')
-  //           $mf.marquee('pause')
-  //           smiles = true
-  //           basketAnimation(true)
-  //         }
-  //       }
-
-  //       window.requestAnimationFrame(step)
-
-  //       right = false
-  //     } else {
-  //       dark.classList.toggle('active')
-
-  //       for (let i = 0; i < white.children.length; i++) {
-  //         white.children[i].style.display = 'block'
-  //       }
-
-  //       svg.style.left = 'unset'
-  //       svg.style.right = 0
-
-  //       rect.setAttribute('x', sideBarWidth)
-  //       tempRect.setAttribute('x', sideBarWidth)
-  //       const windowWidth = window.innerWidth
-
-  //       let start = null
-  //       function step(timestamp) {
-  //         if (!start) start = timestamp
-  //         let progress = (timestamp - start) / 30
-  //         let temp = +rect.getAttribute('x')
-
-  //         if (temp < windowWidth - sideBarWidth) {
-  //           rect.setAttribute('x', temp + progress)
-  //           tempRect.setAttribute('x', temp + progress)
-  //           window.requestAnimationFrame(step)
-  //         } else {
-  //           rect.setAttribute('x', -sideBarWidth)
-  //           tempRect.setAttribute('x', -sideBarWidth)
-
-  //           white.classList.remove('bottom')
-  //           white.classList.add('top')
-  //           dark.classList.remove('top')
-  //           dark.classList.add('bottom')
-
-  //           for (let i = 0; i < dark.children.length; i++) {
-  //             dark.children[i].style.display = 'none'
-  //           }
-
-  //           tempRect.style.display = 'block'
-  //           tempRect.style.fill = '#333'
-  //           defs.style.display = 'none'
-  //           white.classList.toggle('active')
-
-  //           svg.setAttribute('height', document.body.clientHeight)
-  //           tempRect.setAttribute('height', document.body.clientHeight)
-  //           rect.setAttribute('height', document.body.clientHeight)
-
-  //           $('.smiles').css('animation-play-state', 'paused')
-  //           $('.smiles-faster').css('animation-play-state', 'paused')
-
-  //           cardAnimation(true)
-  //           basketAnimation(false)
-  //           smiles = false
-
-  //           $ms.marquee('pause')
-  //           $mf.marquee('resume')
-  //         }
-  //       }
-
-  //       window.requestAnimationFrame(step)
-
-  //       right = true
-  //     }
-  //   })
-  // }
 }
 
 function basketAnimation(show) {
@@ -367,44 +210,89 @@ function smilesAnimation() {
   }
 }
 
-$(document).on('mousewheel touchmove', (e) => {
-  const documentHeight = $(document).scrollTop() + window.innerHeight / 0.9
-
-  if (
-    documentHeight >= $('.card-terminal').closest('div').offset().top * 2 ||
-    documentHeight < $('.card-terminal').closest('div').offset().top
-  ) {
-    cardAnimation(false)
-  } else if (
-    documentHeight >= $('.card-terminal').closest('div').offset().top
-  ) {
-    cardAnimation(true)
+$(window).scroll(function () {
+  if ($(this).scrollTop() > $('.first').offset().top + 50) {
+    $('.first').marquee('pause')
+  } else {
+    $('.first').marquee('resume')
   }
 
   if (
-    documentHeight >= $('.fire').closest('div').offset().top * 2 ||
-    documentHeight < $('.fire').closest('div').offset().top
+    ($(this).scrollTop() >
+      $('.card-terminal').closest('div').offset().top - 250 &&
+      lightTheme) ||
+    ($(this).scrollTop() <
+      $('.card-terminal').closest('div').offset().top - 250 &&
+      lightTheme)
   ) {
-    fireAnimation(false)
-  } else if (documentHeight >= $('.fire').closest('div').offset().top) {
-    fireAnimation(true)
+    if (
+      $(this).scrollTop() >
+        $('.card-terminal').closest('div').height() +
+          $('.card-terminal').closest('div').offset().top ||
+      $(this).scrollTop() <
+        $('.card-terminal').closest('div').offset().top - 500
+    ) {
+      cardAnimation(false)
+    } else {
+      cardAnimation(true)
+    }
   }
 
   if (
-    documentHeight >= $('.smiles').closest('div').offset().top * 2 ||
-    (documentHeight < $('.smiles').closest('div').offset().top && smiles)
+    ($(this).scrollTop() > $('.fire').closest('div').offset().top - 250 &&
+      lightTheme) ||
+    ($(this).scrollTop() < $('.fire').closest('div').offset().top - 250 &&
+      lightTheme)
   ) {
-    smiles = false
-    smilesAnimation()
-  } else if (documentHeight >= $('.smiles').closest('div').offset().top) {
-    smiles = true
-    smilesAnimation()
+    if (
+      $(this).scrollTop() >
+        $('.fire').closest('div').height() +
+          $('.fire').closest('div').offset().top ||
+      $(this).scrollTop() <
+        $('.fire').closest('div').offset().top - 500
+    ) {
+      fireAnimation(false)
+    } else {
+      fireAnimation(true)
+    }
   }
+
+  if (
+    ($(this).scrollTop() > $('.smiles').closest('div').offset().top - 250 &&
+      !lightTheme) ||
+    ($(this).scrollTop() < $('.smiles').closest('div').offset().top - 250 &&
+      !lightTheme)
+  ) {
+    if (
+      $(this).scrollTop() >
+        $('.smiles').closest('div').height() +
+          $('.smiles').closest('div').offset().top ||
+      $(this).scrollTop() <
+        $('.smiles').closest('div').offset().top - 500
+    ) {
+      fireAnimation(false)
+    } else {
+      fireAnimation(true)
+    }
+  }
+
 })
+
+// $(document).on('mousewheel touchmove', (e) => {
+//   if (
+//     documentHeight >= $('.smiles').closest('div').offset().top * 2 ||
+//     (documentHeight < $('.smiles').closest('div').offset().top && smiles)
+//   ) {
+//     smiles = false
+//     smilesAnimation()
+//   } else if (documentHeight >= $('.smiles').closest('div').offset().top) {
+//     smiles = true
+//     smilesAnimation()
+//   }
+// })
 
 $(document).ready(() => {
   const dark = document.querySelector('.darken')
-  const white = document.querySelector('.white')
 
   for (let i = 0; i < dark.children.length; i++) {
     dark.children[i].style.display = 'none'
