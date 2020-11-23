@@ -1,7 +1,8 @@
 let smiles = false
 
 window.onload = () => {
-  const $mf = $('.first').marquee({ // add marquee hide while scroll down
+  const $mf = $('.first').marquee({
+    // add marquee hide while scroll down
     duration: 15000,
     startVisible: true,
     duplicated: true,
@@ -15,160 +16,235 @@ window.onload = () => {
 
   $ms.marquee('pause')
 
-  const svg = document.querySelector('.svg-slider')
-  const tempRect = document.querySelector('.svg-slider > rect')
-  const rect = document.querySelector('.svg-slider > defs > clipPath > rect')
-  const defs = document.querySelector('.svg-slider > defs')
-
   const white = document.querySelector('.white')
   const dark = document.querySelector('.darken')
 
-  defs.style.display = 'none'
+  const svgRight = document.querySelector('.svg-slider-right')
+  const svgLeft = document.querySelector('.svg-slider-left')
 
-  let sideBarWidth = 15
+  const rectRight = document.querySelector('.svg-slider-right > rect')
+  const rectLeft = document.querySelector('.svg-slider-left > rect')
 
-  cardAnimation(true)
+  const defsRight = document.querySelector(
+    '.svg-slider-right > defs > clipPath > rect'
+  )
+  const defsLeft = document.querySelector(
+    '.svg-slider-left > defs > clipPath > rect'
+  )
 
-  // if (window.innerWidth < 1440 && window.innerWidth > 1366) {
-  //   sideBarWidth = 15
-  // } else {
-  //   sideBarWidth = 15
-  // }
+  const clipRectRight = document.querySelector(
+    '.svg-slider-right > defs > clipPath > rect'
+  )
+  const clipRectLeft = document.querySelector(
+    '.svg-slider-left > defs > clipPath > rect'
+  )
 
-  tempRect.setAttribute('width', window.innerWidth)
-  tempRect.setAttribute('x', -sideBarWidth)
-  tempRect.setAttribute('height', document.body.clientHeight)
+  //скрываем левую svg
+  svgLeft.style.display = 'none'
 
-  rect.setAttribute('width', window.innerWidth)
-  rect.setAttribute('x', -sideBarWidth)
-  rect.setAttribute('height', document.body.clientHeight)
-  svg.setAttribute('width', sideBarWidth)
-  svg.setAttribute('height', document.body.clientHeight)
-
-  let right = true
-
-  svg.addEventListener('click', (e) => {
-    tempRect.style.display = 'none'
-    defs.style.display = 'block'
-
-    if (right) {
-      white.classList.toggle('active')
-      cardAnimation(false)
-
-      for (let i = 0; i < dark.children.length; i++) {
-        dark.children[i].style.display = 'block'
-      }
-
-      svg.style.right = 'unset'
-      svg.style.left = 0
-      white.classList.remove('top')
-      white.classList.add('bottom')
-      dark.classList.remove('bottom')
-      dark.classList.add('top')
-      rect.setAttribute('x', window.innerWidth - sideBarWidth)
-      tempRect.setAttribute('x', window.innerWidth - sideBarWidth)
-
-      let start = null
-      function step(timestamp) {
-        if (!start) start = timestamp
-        let progress = (timestamp - start) / 60
-        let temp = +rect.getAttribute('x')
-
-        if (temp - progress > sideBarWidth) {
-          rect.setAttribute('x', temp - progress)
-          tempRect.setAttribute('x', temp - progress)
-          window.requestAnimationFrame(step)
-        } else {
-          for (let i = 0; i < white.children.length; i++) {
-            white.children[i].style.display = 'none'
-          }
-
-          dark.classList.toggle('active')
-
-          rect.setAttribute('x', sideBarWidth)
-          tempRect.setAttribute('x', 0)
-          tempRect.style.display = 'block'
-          tempRect.style.fill = '#fff'
-
-          svg.setAttribute('height', document.body.clientHeight)
-          tempRect.setAttribute('height', document.body.clientHeight)
-          rect.setAttribute('height', document.body.clientHeight)
-
-          defs.style.display = 'none'
-
-          $ms.marquee('resume')
-          $mf.marquee('pause')
-          smiles = true
-          basketAnimation(true)
-        }
-      }
-
-      window.requestAnimationFrame(step)
-
-      right = false
-    } else {
-      dark.classList.toggle('active')
-
-      for (let i = 0; i < white.children.length; i++) {
-        white.children[i].style.display = 'block'
-      }
-
-      svg.style.left = 'unset'
-      svg.style.right = 0
-
-      rect.setAttribute('x', sideBarWidth)
-      tempRect.setAttribute('x', sideBarWidth)
-      const windowWidth = window.innerWidth
-
-      let start = null
-      function step(timestamp) {
-        if (!start) start = timestamp
-        let progress = (timestamp - start) / 30
-        let temp = +rect.getAttribute('x')
-
-        if (temp < windowWidth - sideBarWidth) {
-          rect.setAttribute('x', temp + progress)
-          tempRect.setAttribute('x', temp + progress)
-          window.requestAnimationFrame(step)
-        } else {
-          rect.setAttribute('x', -sideBarWidth)
-          tempRect.setAttribute('x', -sideBarWidth)
-
-          white.classList.remove('bottom')
-          white.classList.add('top')
-          dark.classList.remove('top')
-          dark.classList.add('bottom')
-
-          for (let i = 0; i < dark.children.length; i++) {
-            dark.children[i].style.display = 'none'
-          }
-
-          tempRect.style.display = 'block'
-          tempRect.style.fill = '#333'
-          defs.style.display = 'none'
-          white.classList.toggle('active')
-
-          svg.setAttribute('height', document.body.clientHeight)
-          tempRect.setAttribute('height', document.body.clientHeight)
-          rect.setAttribute('height', document.body.clientHeight)
-
-          $('.smiles').css('animation-play-state', 'paused')
-          $('.smiles-faster').css('animation-play-state', 'paused')
-
-          cardAnimation(true)
-          basketAnimation(false)
-          smiles = false
-
-          $ms.marquee('pause')
-          $mf.marquee('resume')
-        }
-      }
-
-      window.requestAnimationFrame(step)
-
-      right = true
+  svgRight.addEventListener('click', () => {
+    for (let i = 0; i < dark.children.length; i++) {
+      dark.children[i].style.display = 'block'
     }
+
+    white.classList.toggle('active')
+    white.classList.toggle('clip-right')
+
+    anime({
+      targets: clipRectRight,
+      translateX: 'calc(-100% + 15px)',
+      easing: 'spring(3, 50, 40, 0)',
+      complete: function () {
+        alert('o_o')
+      }
   })
+
+    // let start = null
+    // function step(timestamp) {
+    //   if (!start) start = timestamp
+    //   let progress = (timestamp - start) / 60
+    //   console.log(progress)
+
+    //   if (progress > 15) {
+    //     window.requestAnimationFrame(step)
+    //   } else {
+    //     for (let i = 0; i < white.children.length; i++) {
+    //       white.children[i].style.display = 'none'
+    //     }
+
+    //     white.classList.toggle('top')
+    //     white.classList.toggle('bottom')
+
+    //     dark.classList.toggle('bottom')
+    //     dark.classList.toggle('top')
+
+    //     svgLeft.style.display = 'block'
+    //     svgLeft.style.width = '15px'
+
+    //     svgRight.style.display = 'none'
+    //   }
+    // }
+
+    // window.requestAnimationFrame(step)
+  })
+
+  //   const svg = document.querySelector('.svg-slider-right')
+  //   const tempRect = document.querySelector('.svg-slider-right > rect')
+  //   const rect = document.querySelector('.svg-slider-right > defs > clipPath > rect')
+  //   const defs = document.querySelector('.svg-slider-right > defs')
+
+  //   const white = document.querySelector('.white')
+  //   const dark = document.querySelector('.darken')
+
+  //   defs.style.display = 'none'
+
+  //   let sideBarWidth = 15
+
+  //   cardAnimation(true)
+
+  //   // if (window.innerWidth < 1440 && window.innerWidth > 1366) {
+  //   //   sideBarWidth = 15
+  //   // } else {
+  //   //   sideBarWidth = 15
+  //   // }
+
+  //   tempRect.setAttribute('width', window.innerWidth)
+  //   tempRect.setAttribute('x', -sideBarWidth)
+  //   tempRect.setAttribute('height', document.body.clientHeight)
+
+  //   rect.setAttribute('width', window.innerWidth)
+  //   rect.setAttribute('x', -sideBarWidth)
+  //   rect.setAttribute('height', document.body.clientHeight)
+  //   svg.setAttribute('width', sideBarWidth)
+  //   svg.setAttribute('height', document.body.clientHeight)
+
+  //   let right = true
+
+  //   svg.addEventListener('click', (e) => {
+  //     tempRect.style.display = 'none'
+  //     defs.style.display = 'block'
+
+  //     if (right) {
+  //       white.classList.toggle('active')
+  //       cardAnimation(false)
+
+  //       for (let i = 0; i < dark.children.length; i++) {
+  //         dark.children[i].style.display = 'block'
+  //       }
+
+  //       svg.style.right = 'unset'
+  //       svg.style.left = 0
+
+  //       white.classList.remove('top')
+  //       white.classList.add('bottom')
+  //       dark.classList.remove('bottom')
+  //       dark.classList.add('top')
+
+  //       rect.setAttribute('x', window.innerWidth - sideBarWidth)
+  //       tempRect.setAttribute('x', window.innerWidth - sideBarWidth)
+
+  //       let start = null
+  //       function step(timestamp) {
+  //         if (!start) start = timestamp
+  //         let progress = (timestamp - start) / 60
+  //         let temp = +rect.getAttribute('x')
+
+  //         if (temp - progress > sideBarWidth) {
+  //           rect.setAttribute('x', temp - progress)
+  //           tempRect.setAttribute('x', temp - progress)
+  //           window.requestAnimationFrame(step)
+  //         } else {
+  //           for (let i = 0; i < white.children.length; i++) {
+  //             white.children[i].style.display = 'none'
+  //           }
+
+  //           dark.classList.toggle('active')
+
+  //           rect.setAttribute('x', sideBarWidth)
+  //           tempRect.setAttribute('x', 0)
+  //           tempRect.style.display = 'block'
+  //           tempRect.style.fill = '#fff'
+
+  //           svg.setAttribute('height', document.body.clientHeight)
+  //           tempRect.setAttribute('height', document.body.clientHeight)
+  //           rect.setAttribute('height', document.body.clientHeight)
+
+  //           defs.style.display = 'none'
+
+  //           $ms.marquee('resume')
+  //           $mf.marquee('pause')
+  //           smiles = true
+  //           basketAnimation(true)
+  //         }
+  //       }
+
+  //       window.requestAnimationFrame(step)
+
+  //       right = false
+  //     } else {
+  //       dark.classList.toggle('active')
+
+  //       for (let i = 0; i < white.children.length; i++) {
+  //         white.children[i].style.display = 'block'
+  //       }
+
+  //       svg.style.left = 'unset'
+  //       svg.style.right = 0
+
+  //       rect.setAttribute('x', sideBarWidth)
+  //       tempRect.setAttribute('x', sideBarWidth)
+  //       const windowWidth = window.innerWidth
+
+  //       let start = null
+  //       function step(timestamp) {
+  //         if (!start) start = timestamp
+  //         let progress = (timestamp - start) / 30
+  //         let temp = +rect.getAttribute('x')
+
+  //         if (temp < windowWidth - sideBarWidth) {
+  //           rect.setAttribute('x', temp + progress)
+  //           tempRect.setAttribute('x', temp + progress)
+  //           window.requestAnimationFrame(step)
+  //         } else {
+  //           rect.setAttribute('x', -sideBarWidth)
+  //           tempRect.setAttribute('x', -sideBarWidth)
+
+  //           white.classList.remove('bottom')
+  //           white.classList.add('top')
+  //           dark.classList.remove('top')
+  //           dark.classList.add('bottom')
+
+  //           for (let i = 0; i < dark.children.length; i++) {
+  //             dark.children[i].style.display = 'none'
+  //           }
+
+  //           tempRect.style.display = 'block'
+  //           tempRect.style.fill = '#333'
+  //           defs.style.display = 'none'
+  //           white.classList.toggle('active')
+
+  //           svg.setAttribute('height', document.body.clientHeight)
+  //           tempRect.setAttribute('height', document.body.clientHeight)
+  //           rect.setAttribute('height', document.body.clientHeight)
+
+  //           $('.smiles').css('animation-play-state', 'paused')
+  //           $('.smiles-faster').css('animation-play-state', 'paused')
+
+  //           cardAnimation(true)
+  //           basketAnimation(false)
+  //           smiles = false
+
+  //           $ms.marquee('pause')
+  //           $mf.marquee('resume')
+  //         }
+  //       }
+
+  //       window.requestAnimationFrame(step)
+
+  //       right = true
+  //     }
+  //   })
+  // }
 }
 
 function basketAnimation(show) {
@@ -296,7 +372,7 @@ $(document).on('mousewheel touchmove', (e) => {
 
   if (
     documentHeight >= $('.smiles').closest('div').offset().top * 2 ||
-    documentHeight < $('.smiles').closest('div').offset().top && smiles
+    (documentHeight < $('.smiles').closest('div').offset().top && smiles)
   ) {
     smiles = false
     smilesAnimation()
