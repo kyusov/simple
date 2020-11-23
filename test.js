@@ -53,7 +53,7 @@ window.onload = () => {
     anime({
       targets: clipRectRight,
       translateX: 'calc(-100% + 10px)',
-      easing: 'spring(3, 50, 20, 0)',
+      easing: 'linear',
       complete: function () {
         for (let i = 0; i < white.children.length; i++) {
           white.children[i].style.display = 'none'
@@ -63,45 +63,48 @@ window.onload = () => {
         white.classList.toggle('bottom')
         dark.classList.toggle('bottom')
         dark.classList.toggle('top')
+
         dark.classList.toggle('active')
 
         white.classList.toggle('clip-right')
         svgRight.style.display = 'none'
         svgLeft.style.display = 'block'
+
+        clipRectRight.style.transform = 'translateX(0)'
       },
     })
+  })
 
-    svgLeft.addEventListener('click', () => {
-      for (let i = 0; i < white.children.length; i++) {
-        white.children[i].style.display = 'block'
-      }
+  svgLeft.addEventListener('click', () => {
+    for (let i = 0; i < white.children.length; i++) {
+      white.children[i].style.display = 'block'
+    }
 
-      dark.classList.toggle('active')
-      dark.classList.toggle('clip-left')
+    dark.classList.toggle('active')
+    dark.classList.toggle('clip-left')
 
-      anime({
-        targets: clipRectLeft,
-        translateX: 'calc(100% - 10px)',
-        easing: 'spring(3, 50, 20, 0)',
-        complete: function () {
-          for (let i = 0; i < dark.children.length; i++) {
-            dark.children[i].style.display = 'none'
-          }
+    anime({
+      targets: clipRectLeft,
+      translateX: 'calc(100% - 10px)',
+      easing: 'linear',
+      complete: function () {
+        for (let i = 0; i < dark.children.length; i++) {
+          dark.children[i].style.display = 'none'
+        }
 
-          dark.classList.toggle('top')
-          dark.classList.toggle('bottom')
+        white.classList.toggle('top')
+        white.classList.toggle('bottom')
+        dark.classList.toggle('bottom')
+        dark.classList.toggle('top')
 
-          white.classList.toggle('bottom')
-          white.classList.toggle('top')
-          
-          white.classList.toggle('active')
+        white.classList.toggle('active')
+        dark.classList.toggle('clip-left')
 
-          // white.classList.toggle('clip-right')
+        svgRight.style.display = 'block'
+        svgLeft.style.display = 'none'
 
-          svgRight.style.display = 'block'
-          svgLeft.style.display = 'none'
-        },
-      })
+        clipRectLeft.style.transform = 'translateX(0)'
+      },
     })
   })
 
@@ -402,7 +405,7 @@ $(document).on('mousewheel touchmove', (e) => {
 $(document).ready(() => {
   const dark = document.querySelector('.darken')
   const white = document.querySelector('.white')
-  white.classList.toggle('active')
+
   for (let i = 0; i < dark.children.length; i++) {
     dark.children[i].style.display = 'none'
   }
