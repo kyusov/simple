@@ -77,28 +77,6 @@
   display: flex;
 }
 
-.ticker {
-  margin-top: 45px;
-}
-
-.ticker__text {
-  z-index: -3;
-  height: 96px;
-  background: repeat-x url("../pictures/rollText.svg") center/contain;
-  background-size: 1452px 96px;
-  background-position: 0px 0px;
-}
-
-.darken .ticker {
-  background-color: #333333;
-}
-
-.darken .ticker__text {
-  background: repeat-x url("../pictures/rollTextDarken.svg") center/contain;
-  background-size: 1452px 96px;
-  background-position: 0px 0px;
-}
-
 @media screen and (max-width: 550px) {
   .marquee {
     margin-top: 25px;

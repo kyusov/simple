@@ -1,21 +1,11 @@
-let smiles = false
 let lightTheme = true
 
 window.onload = () => {
   const $mf = $('.first').marquee({
-    // add marquee hide while scroll down
     duration: 15000,
     startVisible: true,
     duplicated: true,
   })
-
-  const $ms = $('.second').marquee({
-    duration: 15000,
-    startVisible: true,
-    duplicated: true,
-  })
-
-  $ms.marquee('pause')
 
   const white = document.querySelector('.white')
   const dark = document.querySelector('.darken')
@@ -23,15 +13,15 @@ window.onload = () => {
   const svgRight = document.querySelector('.svg-slider-right')
   const svgLeft = document.querySelector('.svg-slider-left')
 
-  const rectRight = document.querySelector('.svg-slider-right > rect')
-  const rectLeft = document.querySelector('.svg-slider-left > rect')
+  // const rectRight = document.querySelector('.svg-slider-right > rect')
+  // const rectLeft = document.querySelector('.svg-slider-left > rect')
 
-  const defsRight = document.querySelector(
-    '.svg-slider-right > defs > clipPath > rect'
-  )
-  const defsLeft = document.querySelector(
-    '.svg-slider-left > defs > clipPath > rect'
-  )
+  // const defsRight = document.querySelector(
+  //   '.svg-slider-right > defs > clipPath > rect'
+  // )
+  // const defsLeft = document.querySelector(
+  //   '.svg-slider-left > defs > clipPath > rect'
+  // )
 
   const clipRectRight = document.querySelector(
     '.svg-slider-right > defs > clipPath > rect'
@@ -50,6 +40,35 @@ window.onload = () => {
 
     white.classList.toggle('active')
     white.classList.toggle('clip-right')
+
+    anime({
+      targets: '.offer__bag-left',
+      rotate: '-10deg',
+      duration: 4000,
+      easing: 'easeInQuad',
+      direction: 'alternate',
+      loop: true,
+    })
+
+    anime({
+      targets: '.offer__bag-right',
+      rotate: '10deg',
+      duration: 4000,
+      delay: 100,
+      easing: 'easeInQuad',
+      direction: 'alternate',
+      loop: true,
+    })
+
+    anime({
+      targets: '.offer__bag-bottom',
+      rotate: '10deg',
+      duration: 2500,
+      delay: 150,
+      easing: 'easeInQuad',
+      direction: 'alternate',
+      loop: true,
+    })
 
     anime({
       targets: clipRectRight,
@@ -72,6 +91,13 @@ window.onload = () => {
         svgLeft.style.display = 'block'
 
         clipRectRight.style.transform = 'translateX(0)'
+        $('.second').marquee({
+          duration: 15000,
+          startVisible: true,
+          duplicated: true,
+        })
+
+        lightTheme = false
       },
     })
   })
@@ -105,6 +131,8 @@ window.onload = () => {
         svgLeft.style.display = 'none'
 
         clipRectLeft.style.transform = 'translateX(0)'
+
+        lightTheme = true
       },
     })
   })
@@ -116,35 +144,35 @@ function basketAnimation(show) {
       x: '0',
       y: '0',
       opacity: 1,
-      duration: 1000,
+      duration: 700,
     })
 
     $('.basket-back').transition({
       x: '0',
       y: '0',
       opacity: 1,
-      duration: 1000,
+      duration: 700,
     })
 
     $('.basket-bag-big').transition({
       y: '0',
       opacity: 1,
       duration: 1000,
-      delay: 400,
+      delay: 200,
     })
 
     $('.basket-bag-middle').transition({
       y: '0',
       opacity: 1,
-      duration: 1000,
-      delay: 500,
+      duration: 700,
+      delay: 300,
     })
 
     $('.basket-bag-top').transition({
       y: '0',
       opacity: 1,
-      duration: 700,
-      delay: 400,
+      duration: 500,
+      delay: 200,
     })
   } else {
     $('.basket-front').transition({
@@ -200,8 +228,8 @@ function fireAnimation(show) {
   }
 }
 
-function smilesAnimation() {
-  if (smiles) {
+function smilesAnimation(show) {
+  if (show) {
     $('.smiles').css('animation-play-state', 'running')
     $('.smiles-faster').css('animation-play-state', 'running')
   } else {
@@ -211,11 +239,19 @@ function smilesAnimation() {
 }
 
 $(window).scroll(function () {
-  if ($(this).scrollTop() > $('.first').offset().top + 50) {
+  if ($(this).scrollTop() > $('.first').offset().top + 100) {
     $('.first').marquee('pause')
+    $('.second').marquee('pause')
   } else {
-    $('.first').marquee('resume')
+    if (lightTheme) {
+      $('.first').marquee('resume')
+    } else {
+      $('.second').marquee('resume')
+    }
   }
+
+  // const clipGroup = $('.svg-slider-right > defs > clipPath > g')
+  // clipGroup.css('transform', `translate(0, ${$(this).scrollTop()})`)
 
   if (
     ($(this).scrollTop() >
@@ -248,8 +284,7 @@ $(window).scroll(function () {
       $(this).scrollTop() >
         $('.fire').closest('div').height() +
           $('.fire').closest('div').offset().top ||
-      $(this).scrollTop() <
-        $('.fire').closest('div').offset().top - 500
+      $(this).scrollTop() < $('.fire').closest('div').offset().top - 500
     ) {
       fireAnimation(false)
     } else {
@@ -267,15 +302,36 @@ $(window).scroll(function () {
       $(this).scrollTop() >
         $('.smiles').closest('div').height() +
           $('.smiles').closest('div').offset().top ||
-      $(this).scrollTop() <
-        $('.smiles').closest('div').offset().top - 500
+      $(this).scrollTop() < $('.smiles').closest('div').offset().top - 500
     ) {
-      fireAnimation(false)
+      smilesAnimation(false)
     } else {
-      fireAnimation(true)
+      smilesAnimation(true)
     }
   }
 
+  console.log(
+    $(this).scrollTop(),
+    $('.basket-front').closest('div').offset().top
+  )
+
+  if (
+    ($(this).scrollTop() >
+      $('.basket-front').closest('div').offset().top - 250 &&
+      !lightTheme) ||
+    ($(this).scrollTop() <
+      $('.basket-front').closest('div').offset().top - 250 &&
+      !lightTheme)
+  ) {
+    if (
+      $(this).scrollTop() > $('.basket-front').closest('div').offset().top - 200 ||
+      $(this).scrollTop() < $('.basket-front').closest('div').offset().top - 500
+    ) {
+      basketAnimation(false)
+    } else {
+      basketAnimation(true)
+    }
+  }
 })
 
 // $(document).on('mousewheel touchmove', (e) => {
