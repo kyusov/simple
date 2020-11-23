@@ -52,40 +52,57 @@ window.onload = () => {
 
     anime({
       targets: clipRectRight,
-      translateX: 'calc(-100% + 15px)',
-      easing: 'spring(3, 50, 40, 0)',
+      translateX: 'calc(-100% + 10px)',
+      easing: 'spring(3, 50, 20, 0)',
       complete: function () {
-        alert('o_o')
+        for (let i = 0; i < white.children.length; i++) {
+          white.children[i].style.display = 'none'
+        }
+
+        white.classList.toggle('top')
+        white.classList.toggle('bottom')
+        dark.classList.toggle('bottom')
+        dark.classList.toggle('top')
+        dark.classList.toggle('active')
+
+        white.classList.toggle('clip-right')
+        svgRight.style.display = 'none'
+        svgLeft.style.display = 'block'
+      },
+    })
+
+    svgLeft.addEventListener('click', () => {
+      for (let i = 0; i < white.children.length; i++) {
+        white.children[i].style.display = 'block'
       }
-  })
 
-    // let start = null
-    // function step(timestamp) {
-    //   if (!start) start = timestamp
-    //   let progress = (timestamp - start) / 60
-    //   console.log(progress)
+      dark.classList.toggle('active')
+      dark.classList.toggle('clip-left')
 
-    //   if (progress > 15) {
-    //     window.requestAnimationFrame(step)
-    //   } else {
-    //     for (let i = 0; i < white.children.length; i++) {
-    //       white.children[i].style.display = 'none'
-    //     }
+      anime({
+        targets: clipRectLeft,
+        translateX: 'calc(100% - 10px)',
+        easing: 'spring(3, 50, 20, 0)',
+        complete: function () {
+          for (let i = 0; i < dark.children.length; i++) {
+            dark.children[i].style.display = 'none'
+          }
 
-    //     white.classList.toggle('top')
-    //     white.classList.toggle('bottom')
+          dark.classList.toggle('top')
+          dark.classList.toggle('bottom')
 
-    //     dark.classList.toggle('bottom')
-    //     dark.classList.toggle('top')
+          white.classList.toggle('bottom')
+          white.classList.toggle('top')
+          
+          white.classList.toggle('active')
 
-    //     svgLeft.style.display = 'block'
-    //     svgLeft.style.width = '15px'
+          // white.classList.toggle('clip-right')
 
-    //     svgRight.style.display = 'none'
-    //   }
-    // }
-
-    // window.requestAnimationFrame(step)
+          svgRight.style.display = 'block'
+          svgLeft.style.display = 'none'
+        },
+      })
+    })
   })
 
   //   const svg = document.querySelector('.svg-slider-right')

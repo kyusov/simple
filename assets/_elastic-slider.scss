@@ -46,11 +46,11 @@
   }
 
   .svg-slider-right {
-    right: calc(-100% + 15px);
+    right: calc(-100% + 10px);
   }
 
   .svg-slider-left {
-    left: 0;
+    left: calc(-100% + 10px);
   }
 
   .clip-right {
