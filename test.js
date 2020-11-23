@@ -53,7 +53,7 @@ window.onload = () => {
     anime({
       targets: clipRectRight,
       translateX: 'calc(-100% + 10px)',
-      easing: 'linear',
+      easing: 'spring(3, 10, 10, 0)',
       complete: function () {
         for (let i = 0; i < white.children.length; i++) {
           white.children[i].style.display = 'none'
@@ -86,7 +86,7 @@ window.onload = () => {
     anime({
       targets: clipRectLeft,
       translateX: 'calc(100% - 10px)',
-      easing: 'linear',
+      easing: 'spring(3, 10, 10, 0)',
       complete: function () {
         for (let i = 0; i < dark.children.length; i++) {
           dark.children[i].style.display = 'none'
