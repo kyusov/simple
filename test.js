@@ -7,6 +7,12 @@ window.onload = () => {
     duplicated: true,
   })
 
+  $('.second').marquee({
+    duration: 15000,
+    startVisible: true,
+    duplicated: true,
+  })
+
   const white = document.querySelector('.white')
   const dark = document.querySelector('.darken')
 
@@ -36,7 +42,7 @@ window.onload = () => {
   svgLeft.style.display = 'none'
 
   svgRight.addEventListener('click', () => {
-    for (let i = 0; i < dark.children.length; i++) {
+    for (let i = 2; i < dark.children.length; i++) {
       dark.children[i].style.display = 'block'
     }
 
@@ -93,11 +99,6 @@ window.onload = () => {
         svgLeft.style.display = 'block'
 
         clipRectRight.style.transform = 'translateX(0)'
-        // $('.second').marquee({
-        //   duration: 15000,
-        //   startVisible: true,
-        //   duplicated: true,
-        // })
 
         lightTheme = false
       },
@@ -117,7 +118,7 @@ window.onload = () => {
       translateX: 'calc(100% - 15px)',
       easing: 'spring(3, 10, 10, 0)',
       complete: function () {
-        for (let i = 0; i < dark.children.length; i++) {
+        for (let i = 2; i < dark.children.length; i++) {
           dark.children[i].style.display = 'none'
         }
 
@@ -365,7 +366,61 @@ $(window).scroll(function () {
 $(document).ready(() => {
   const dark = document.querySelector('.darken')
 
-  for (let i = 0; i < dark.children.length; i++) {
+  for (let i = 2; i < dark.children.length; i++) {
     dark.children[i].style.display = 'none'
   }
+
+  $('.header__menu-btn').on('click', (e) => {
+    $('.menu').css({ display: 'flex', opacity: 1 })
+    $('.menu__overlay').css('display', 'block')
+    $('.first').marquee('pause')
+
+    $('body').css('overflow-y', 'hidden')
+
+    anime({
+      targets: '.menu__overlay',
+      opacity: 1,
+      duration: 1000,
+      easing: 'easeOutExpo',
+    })
+
+    anime({
+      targets: '.menu__wrapper',
+      opacity: 1,
+      translateX: ['100%', '0'],
+      duration: 1000,
+      delay: 500,
+      easing: 'easeOutExpo',
+      begin: function () {
+        $('.menu__wrapper').css('display', 'block')
+      },
+    })
+  })
+
+  $('.menu__wrapper-close').on('click', () => {
+    $('body').css('overflow-y', 'unset')
+
+    anime({
+      targets: '.menu__wrapper',
+      opacity: 0,
+      translateX: ['0', '100%'],
+      duration: 1000,
+      easing: 'easeOutExpo',
+      complete: function () {
+        $('.menu__wrapper').css('display', 'none')
+      },
+    })
+
+    anime({
+      targets: '.menu__overlay',
+      opacity: 0,
+      duration: 1000,
+      delay: 500,
+      easing: 'easeOutExpo',
+      complete: function () {
+        $('.menu').css({ display: 'none', opacity: 0 })
+        $('.menu__overlay').css('display', 'none')
+      },
+    })
+  })
 })

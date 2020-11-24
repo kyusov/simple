@@ -2,6 +2,11 @@ $menu-btn-width: 64px;
 $menu-btn-height: 64px;
 
 .header {
+
+  width: 100%;
+  position: fixed;
+  z-index: 500;
+
   &__wrapper {
     width: 100%;
     max-width: 1165px;
@@ -72,8 +77,27 @@ $menu-btn-height: 64px;
     }
 
     &__menu-btn {
-      width: 34px;
-      height: 34px;
+      width: 64px;
+      height: 64px;
+      font-size: 14px;
+      line-height: 9px;
+    }
+
+    &__logo {
+      height: 70px;
+    }
+  }
+}
+
+@media screen and (max-width: 475px) {
+  .header {
+    &__wrapper {
+      padding: 0 18px;
+    }
+
+    &__menu-btn {
+      width: 32px;
+      height: 32px;
       font-size: 8px;
       line-height: 9px;
     }

@@ -216,6 +216,32 @@
                     </div>
                 </div>
             </footer>
+            <svg class="svg-slider-right" fill="black">
+                <rect fill="#333" />
+                <g>
+                    <path
+                        d="M0.284737 171C0.284737 121.773 59.999 86.3636 59.999 0V342C59.999 262.545 0.284737 220.227 0.284737 171Z"
+                        fill="#333333" />
+                    <line x1="18.9395" y1="170.459" x2="40.9803" y2="170.459" stroke="white" stroke-width="3" />
+                    <line x1="18.9395" y1="161.275" x2="40.9803" y2="161.275" stroke="white" stroke-width="3" />
+                    <line x1="18.9395" y1="179.643" x2="40.9803" y2="179.643" stroke="white" stroke-width="3" />
+                    <circle cx="29.5" cy="171.5" r="21.5" stroke="#FFFCFC" stroke-width="2" fill="transparent" />
+                </g>
+                <defs>
+                    <clipPath id="myPath-right">
+                        <rect />
+                        <!-- <g>
+                            <path
+                                d="M0.284737 171C0.284737 121.773 59.999 86.3636 59.999 0V342C59.999 262.545 0.284737 220.227 0.284737 171Z"
+                                fill="#333333" />
+                            <line x1="18.9395" y1="170.459" x2="40.9803" y2="170.459" stroke="white" stroke-width="3" />
+                            <line x1="18.9395" y1="161.275" x2="40.9803" y2="161.275" stroke="white" stroke-width="3" />
+                            <line x1="18.9395" y1="179.643" x2="40.9803" y2="179.643" stroke="white" stroke-width="3" />
+                            <circle cx="29.5" cy="171.5" r="21.5" stroke="#FFFCFC" stroke-width="2"  fill="transparent" />
+                        </g> -->
+                    </clipPath>
+                </defs>
+            </svg>
         </div>
         <div class="darken bottom">
             <header class="header">
@@ -228,6 +254,7 @@
                 </div>
             </header>
             <div class="marquee second">
+                <img class="marquee__img" src="assets/pictures/rollTextDarken.svg" alt="rolling text">
                 <img class="marquee__img" src="assets/pictures/rollTextDarken.svg" alt="rolling text">
             </div>
             <div class="offer">
@@ -314,7 +341,10 @@
                                     </div>
                                 </div>
                                 <div class="privileges__img">
-                                    <img class="privileges__picture" src="assets/pictures/check-svg.svg" alt="chat">
+                                    <img class="privileges__picture check-item" src="assets/pictures/check-item.svg"
+                                        alt="check">
+                                    <img class="privileges__picture check-card" src="assets/pictures/check-card.svg"
+                                        alt="check">
                                 </div>
                             </div>
                         </div>
@@ -429,32 +459,7 @@
                 </div>
             </div>
         </div>
-        <svg class="svg-slider-right" fill="black">
-            <rect fill="#333" />
-            <g>
-                <path
-                    d="M0.284737 171C0.284737 121.773 59.999 86.3636 59.999 0V342C59.999 262.545 0.284737 220.227 0.284737 171Z"
-                    fill="#333333" />
-                <line x1="18.9395" y1="170.459" x2="40.9803" y2="170.459" stroke="white" stroke-width="3" />
-                <line x1="18.9395" y1="161.275" x2="40.9803" y2="161.275" stroke="white" stroke-width="3" />
-                <line x1="18.9395" y1="179.643" x2="40.9803" y2="179.643" stroke="white" stroke-width="3" />
-                <circle cx="29.5" cy="171.5" r="21.5" stroke="#FFFCFC" stroke-width="2"  fill="transparent" />
-            </g>
-            <defs>
-                <clipPath id="myPath-right">
-                    <rect />
-                    <!-- <g>
-                        <path
-                            d="M0.284737 171C0.284737 121.773 59.999 86.3636 59.999 0V342C59.999 262.545 0.284737 220.227 0.284737 171Z"
-                            fill="#333333" />
-                        <line x1="18.9395" y1="170.459" x2="40.9803" y2="170.459" stroke="white" stroke-width="3" />
-                        <line x1="18.9395" y1="161.275" x2="40.9803" y2="161.275" stroke="white" stroke-width="3" />
-                        <line x1="18.9395" y1="179.643" x2="40.9803" y2="179.643" stroke="white" stroke-width="3" />
-                        <circle cx="29.5" cy="171.5" r="21.5" stroke="#FFFCFC" stroke-width="2"  fill="transparent" />
-                    </g> -->
-                </clipPath>
-            </defs>
-        </svg>
+        
         <svg class="svg-slider-left" fill="black">
             <rect fill="#fff" />
             <defs>
@@ -463,6 +468,42 @@
                 </clipPath>
             </defs>
         </svg>
+        <nav class="menu">
+            <div class="menu__overlay"></div>
+            <div class="menu__wrapper">
+                <div class="menu__wrapper-close">
+                    <div class="menu__close">
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+                <div class="menu__block-row">
+                    <div class="menu__social">
+                        <a href="http://facebook.com">
+                            <img src="assets/pictures/social/Facebook icon-darken.svg" alt="social link">
+                        </a>
+                        <a href="http://instagram.com">
+                            <img src="assets/pictures/social/Instagram icon-darken.svg" alt="social link">
+                        </a>
+                        <a href="http://vk.com">
+                            <img src="assets/pictures/social/VK icon-darken.svg" alt="social link">
+                        </a>
+                    </div>
+                    <div class="menu__container">
+                        <div class="menu__title">Меню</div>
+                        <div class="menu__links">
+                            <a class="menu__item">Войти</a>
+                            <a class="menu__item">Стать партнером</a>
+                            <a class="menu__item">Купить карту</a>
+                            <a class="menu__item">Выгоды</a>
+                            <a class="menu__item">Контакты</a>
+                        </div>
+                        <div class="menu__title">Напиши нам</div>
+                        <a class="menu__email" href="mailto:proshe@info.ru">proshe@info.ru</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
     </div>
 
     <!-- <script src="js/main.js"></script> -->
