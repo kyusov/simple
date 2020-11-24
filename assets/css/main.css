@@ -1810,83 +1810,162 @@
   clip-path: url("#myPath-left");
 }
 
-.modal-buy {
-  width: 100%;
-  height: 100vh;
+.modal {
   position: fixed;
-  overflow: hidden;
-  background-color: #fff;
-  left: 0;
   top: 0;
-  z-index: 5;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9000;
   display: none;
 }
 
-.modal-buy.active {
-  display: block;
-}
-
-.modal-buy__wrapper {
-  max-width: 1440px;
+.modal__overlay {
+  position: absolute;
+  z-index: 8900;
   width: 100%;
-  margin: 0 auto;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  display: none;
+  opacity: 0;
 }
 
-.modal-buy__inner_wrapper {
-  margin-top: 10%;
+.modal__wrapper {
+  position: absolute;
+  width: 30%;
+  height: 40%;
+  max-height: 520px;
+  top: 50%;
+  left: 50%;
+  background-color: #fff;
+  padding: 50px;
+  z-index: 8950;
+  border: 1px solid #000;
+  border-radius: 10px;
+  opacity: 0;
+  display: none;
 }
 
-.modal-buy__title {
-  text-transform: uppercase;
-  font-size: 48px;
+@media screen and (max-width: 1440px) {
+  .modal__wrapper {
+    width: 50%;
+  }
+}
+
+.modal__back {
+  position: absolute;
+  width: 30%;
+  height: 40%;
+  max-height: 520px;
+  top: 50%;
+  left: 50%;
+  background-color: #FDC300;
+  z-index: 8940;
+  border: 1px solid #000;
+  border-radius: 10px;
+  opacity: 0;
+  display: none;
+}
+
+@media screen and (max-width: 1440px) {
+  .modal__back {
+    width: 50%;
+  }
+}
+
+.modal__title-wrapper {
+  display: flex;
+  position: relative;
+}
+
+.modal__close {
+  width: 64px;
+  height: 64px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #333;
+  border-radius: 50px;
+}
+
+.modal__close:hover {
+  cursor: pointer;
+}
+
+.modal__close span {
+  width: 36px;
+  height: 3px;
+  background-color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.modal__close span:first-child {
+  transform: translate3d(-50%, -50%, 0) rotate(45deg);
+}
+
+.modal__close span:last-child {
+  transform: translate3d(-50%, -50%, 0) rotate(-45deg);
+}
+
+.modal__title {
+  font-size: 34px;
   font-weight: 900;
+  line-height: 38px;
+  color: #333;
 }
 
-.modal-buy__purchase_card, .modal-buy__title {
-  max-width: 690px;
-  margin: 0 auto;
-}
-
-.modal-buy__purchase_card input {
-  width: 100%;
-  font-size: 36px;
-  font-weight: 400;
-  line-height: 42px;
-  border: none;
-  border-bottom: 2px solid black;
-  outline: none;
-}
-
-.modal-buy__purchase_card input::placeholder {
-  color: rgba(0, 0, 0, 0.3);
-}
-
-.modal-buy__purchase_card input:first-child {
-  margin-top: 60px;
-}
-
-.modal-buy__purchase_card input:not(:first-child) {
+.modal__form {
+  display: flex;
+  flex-direction: column;
   margin-top: 30px;
 }
 
-.modal-buy__purchase_card input[type='checkbox'] {
+.modal__form input {
+  border: none;
+  font-size: 26px;
+  font-weight: 400;
+  line-height: 32px;
+  color: #333;
+  border-bottom: 2px solid #000;
+  outline: none;
+}
+
+.modal__form input:not(:first-child) {
+  margin-top: 30px;
+}
+
+.modal__form input::placeholder {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.modal__form label {
+  margin-top: 20px;
+}
+
+.modal__form input[type='checkbox'] {
   position: absolute;
   z-index: -5;
   opacity: 0;
-  margin: 0;
 }
 
-.modal-buy__purchase_card input[type='checkbox'] + label {
+.modal__form input[type='checkbox'] + label {
   display: inline-flex;
   align-items: center;
   user-select: none;
 }
 
-.modal-buy__purchase_card input[type='checkbox'] + label::before {
+.modal__form input[type='checkbox'] + label::before {
   content: '';
   display: inline-block;
   width: 0.75em;
   height: 0.75em;
+  flex-shrink: 0;
+  flex-grow: 0;
   border: 1px solid #333333;
   margin-right: 0.75em;
   background-color: #333333;
@@ -1895,72 +1974,63 @@
   background-size: 50% 50%;
 }
 
-.modal-buy__purchase_card input[type='checkbox'] + label:hover {
+.modal__form input[type='checkbox'] + label:hover {
   cursor: pointer;
 }
 
-.modal-buy__purchase_card input[type='checkbox']:checked + label::before {
+.modal__form input[type='checkbox']:checked + label::before {
   border-color: #fdc300;
   background-color: #fdc300;
   background-image: url("../pictures/check.svg");
 }
 
-.modal-buy__consent-purchase {
-  margin-top: 30px;
-  font-size: 14px;
-  font-weight: 400;
+.modal__button-wrapper {
   display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
+  justify-content: flex-end;
+  margin-top: 20px;
+  position: relative;
 }
 
-.modal-buy__purchase-btn {
-  margin: 0;
+.modal__button-wrapper button[type='submit'] {
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 21px;
   padding: 22px 95px;
-  background-color: #ffffff;
+  border: 2px solid #333;
+  border-radius: 40px;
+  background-color: #fff;
+  outline: none;
+  position: absolute;
 }
 
-.modal-buy__purchase-btn::before {
-  background-color: #fdc300;
+.modal__button-wrapper button[type='submit']:hover {
+  cursor: pointer;
 }
 
-.modal-buy__hint {
+.modal__button-wrapper button[type='submit']::before {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  top: 5px;
+  left: 2px;
   width: 100%;
-  margin-top: 50px;
-  font-size: 36px;
-  font-weight: 400;
-  line-height: 42px;
-  color: rgba(0, 0, 0, 0.3);
+  height: 100%;
+  background-color: #fdc300;
+  border: 2px solid #333;
+  border-radius: 40px;
 }
 
-@media screen and (max-width: 425px) {
-  .modal-buy__title {
-    padding: 0 18px;
-    font-size: 24px;
-    line-height: 28px;
-  }
-  .modal-buy__purchase_card {
-    padding: 0 18px;
-  }
-  .modal-buy__purchase_card input {
-    font-size: 18px;
-    line-height: 21px;
-    border-bottom: 2px solid #333;
-  }
-  .modal-buy__consent-purchase {
-    flex-direction: column;
-    align-items: center;
-  }
-  .modal-buy__purchase-btn {
-    margin-top: 20px;
-    padding: 19px 82px;
-    font-size: 18px;
-    line-height: 21px;
-  }
-  .modal-buy__hint {
-    font-size: 12px;
-    line-height: 14px;
-  }
+.modal__button-wrapper button[type='submit']:hover {
+  cursor: pointer;
+}
+
+.modal__button-wrapper button[type='submit']:active {
+  transform: translate(5px, 10px);
+  -webkit-transform: translate(5px, 10px);
+}
+
+.modal__button-wrapper button[type='submit']:active::before {
+  content: none;
 }
 
 .menu {
