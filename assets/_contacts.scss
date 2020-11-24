@@ -260,18 +260,13 @@
 
       button[type='submit'] {
         color: $color-white;
-        z-index: 1;
 
         &:hover {
           color: $color-text;
         }
 
-        &:after {
+        &::after {
           background-color: $color-white;
-          z-index: -1;
-        }
-        &:before {
-          z-index: 2;
         }
       }
     }
@@ -291,7 +286,7 @@
         &::before {
           border-color: $color-main;
           background-color: $color-main;
-          background-image: url('../pictures/check.svg');
+          // background-image: url('../pictures/check.svg');
         }
       }
     }

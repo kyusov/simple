@@ -93,11 +93,11 @@ window.onload = () => {
         svgLeft.style.display = 'block'
 
         clipRectRight.style.transform = 'translateX(0)'
-        $('.second').marquee({
-          duration: 15000,
-          startVisible: true,
-          duplicated: true,
-        })
+        // $('.second').marquee({
+        //   duration: 15000,
+        //   startVisible: true,
+        //   duplicated: true,
+        // })
 
         lightTheme = false
       },

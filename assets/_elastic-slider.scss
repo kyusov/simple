@@ -46,7 +46,15 @@
   }
 
   .svg-slider-right {
-    right: calc(-100% + 15px);
+    right: calc(-100% + 67px);
+
+    > g {
+      
+    }
+
+    > rect {
+      transform: translateX(60px);
+    }
   }
 
   .svg-slider-left {

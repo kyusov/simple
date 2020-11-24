@@ -1541,20 +1541,14 @@
 
 .darken .contacts__custumer-form button[type='submit'] {
   color: #fefefe;
-  z-index: 1;
 }
 
 .darken .contacts__custumer-form button[type='submit']:hover {
   color: #333333;
 }
 
-.darken .contacts__custumer-form button[type='submit']:after {
+.darken .contacts__custumer-form button[type='submit']::after {
   background-color: #fefefe;
-  z-index: -1;
-}
-
-.darken .contacts__custumer-form button[type='submit']:before {
-  z-index: 2;
 }
 
 .darken .contacts__checkbox_wrapper label {
@@ -1568,7 +1562,6 @@
 .darken .contacts__checkbox_wrapper input[type='checkbox']:checked + label::before {
   border-color: #fdc300;
   background-color: #fdc300;
-  background-image: url("../pictures/check.svg");
 }
 
 @media screen and (max-width: 1200px) {
@@ -1727,11 +1720,15 @@
 }
 
 .elastic .svg-slider-right {
-  right: calc(-100% + 10px);
+  right: calc(-100% + 67px);
+}
+
+.elastic .svg-slider-right > rect {
+  transform: translateX(60px);
 }
 
 .elastic .svg-slider-left {
-  left: calc(-100% + 10px);
+  left: calc(-100% + 15px);
 }
 
 .elastic .clip-right {
