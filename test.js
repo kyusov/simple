@@ -279,9 +279,6 @@ $(window).scroll(function () {
     }
   }
 
-  // const clipGroup = $('.svg-slider-right > defs > clipPath > g')
-  // clipGroup.css('transform', `translate(0, ${$(this).scrollTop()})`)
-
   if (
     ($(this).scrollTop() >
       $('.card-terminal').closest('div').offset().top - 250 &&
@@ -350,19 +347,6 @@ $(window).scroll(function () {
   }
 })
 
-// $(document).on('mousewheel touchmove', (e) => {
-//   if (
-//     documentHeight >= $('.smiles').closest('div').offset().top * 2 ||
-//     (documentHeight < $('.smiles').closest('div').offset().top && smiles)
-//   ) {
-//     smiles = false
-//     smilesAnimation()
-//   } else if (documentHeight >= $('.smiles').closest('div').offset().top) {
-//     smiles = true
-//     smilesAnimation()
-//   }
-// })
-
 $(document).ready(() => {
   const dark = document.querySelector('.darken')
 
@@ -371,6 +355,36 @@ $(document).ready(() => {
   }
 
   $('.header__menu-btn').on('click', (e) => {
+    if (!lightTheme) {
+      $('.menu__wrapper').css('background-color', '#fff')
+      
+      const items = [...document.querySelectorAll('.menu__item')]
+      for (let i = 0; i < items.length; i++) {
+        $(items[i]).css('color', '#333')
+      }
+
+      const imgs = [...document.querySelectorAll('.menu__social > a')]
+      imgs[0].children[0].setAttribute('src', 'assets/pictures/social/Facebook icon.svg')
+      imgs[1].children[0].setAttribute('src', 'assets/pictures/social/Instagram icon.svg')
+      imgs[2].children[0].setAttribute('src', 'assets/pictures/social/VK icon.svg')
+
+      $('.menu__email').css('color', '#333')
+    } else {
+      $('.menu__wrapper').css('background-color', '#333')
+      
+      const items = [...document.querySelectorAll('.menu__item')]
+      for (let i = 0; i < items.length; i++) {
+        $(items[i]).css('color', '#fff')
+      }
+
+      const imgs = [...document.querySelectorAll('.menu__social > a')]
+      imgs[0].children[0].setAttribute('src', 'assets/pictures/social/Facebook icon-darken.svg')
+      imgs[1].children[0].setAttribute('src', 'assets/pictures/social/Instagram icon-darken.svg')
+      imgs[2].children[0].setAttribute('src', 'assets/pictures/social/VK icon-darken.svg')
+
+      $('.menu__email').css('color', '#fff')
+    }
+
     $('.menu').css({ display: 'flex', opacity: 1 })
     $('.menu__overlay').css('display', 'block')
     $('.first').marquee('pause')
