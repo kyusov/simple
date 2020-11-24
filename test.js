@@ -13,8 +13,8 @@ window.onload = () => {
   const svgRight = document.querySelector('.svg-slider-right')
   const svgLeft = document.querySelector('.svg-slider-left')
 
-  // const rectRight = document.querySelector('.svg-slider-right > rect')
-  // const rectLeft = document.querySelector('.svg-slider-left > rect')
+  const rectRight = document.querySelector('.svg-slider-right > rect')
+  const rectLeft = document.querySelector('.svg-slider-left > rect')
 
   // const defsRight = document.querySelector(
   //   '.svg-slider-right > defs > clipPath > rect'
@@ -22,6 +22,8 @@ window.onload = () => {
   // const defsLeft = document.querySelector(
   //   '.svg-slider-left > defs > clipPath > rect'
   // )
+
+  rectRight.style.height = document.body.clientHeight
 
   const clipRectRight = document.querySelector(
     '.svg-slider-right > defs > clipPath > rect'
@@ -72,7 +74,7 @@ window.onload = () => {
 
     anime({
       targets: clipRectRight,
-      translateX: 'calc(-100% + 10px)',
+      translateX: 'calc(-100% + 15px)',
       easing: 'spring(3, 10, 10, 0)',
       complete: function () {
         for (let i = 0; i < white.children.length; i++) {
@@ -112,7 +114,7 @@ window.onload = () => {
 
     anime({
       targets: clipRectLeft,
-      translateX: 'calc(100% - 10px)',
+      translateX: 'calc(100% - 15px)',
       easing: 'spring(3, 10, 10, 0)',
       complete: function () {
         for (let i = 0; i < dark.children.length; i++) {
