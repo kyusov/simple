@@ -52,6 +52,19 @@ window.onload = () => {
       } 30 ${windowHeight / 2 - 300} V0 Z`
     )
 
+    pathLeft.setAttribute(
+      'd',
+      `M${windowWidth - 10} 0 H0 V${windowHeight} H${windowWidth - 10} V${
+        windowHeight / 2
+      } 
+      C${windowWidth - 10} ${windowHeight / 2 - 150} 
+      ${windowWidth - 40} ${windowHeight / 2 - 150} 
+      ${windowWidth - 40} ${windowHeight / 2 - 200} 
+      S${windowWidth - 10} ${windowHeight / 2 - 250} 
+      ${windowWidth - 10} ${windowHeight / 2 - 400} 
+      V0 Z`
+    )
+
     clipPathRight.setAttribute(
       'd',
       `M30 0 H40 V${windowHeight} H30 V${windowHeight / 2} C30 ${
@@ -128,91 +141,42 @@ window.onload = () => {
       d: [
         {
           value: [
-            `M${windowWidth - 10} 0 H0 V${windowHeight} H${windowWidth - 10} V${windowHeight / 2} 
+            `M${windowWidth - 10} 0 H0 V${windowHeight} H${windowWidth - 10} V${
+              windowHeight / 2
+            } 
           C${windowWidth - 10} ${windowHeight / 2 - 150} 
           ${windowWidth - 40} ${windowHeight / 2 - 150} 
           ${windowWidth - 40} ${windowHeight / 2 - 200} 
           S${windowWidth - 10} ${windowHeight / 2 - 250} 
           ${windowWidth - 10} ${windowHeight / 2 - 400} 
           V0 Z`,
-          `M${10} 0 H0 V${windowHeight} H${10} V${windowHeight / 2} 
+            `M${10} 0 H0 V${windowHeight} H${10} V${windowHeight / 2} 
       C${10} ${windowHeight / 2 - 150} 
       ${40} ${windowHeight / 2 - 150} 
       ${40} ${windowHeight / 2 - 200} 
       S${10} ${windowHeight / 2 - 250} 
       ${10} ${windowHeight / 2 - 400} 
-      V0 Z`]
-          
-      //       `M${windowWidth - 140} 0 
-      //     H0 V${windowHeight} 
-      //     H${windowWidth - 140} V${windowHeight / 2} 
-      //     C${windowWidth - 140} ${windowHeight / 2 - 150} 
-      //     ${windowWidth - 240} ${windowHeight / 2 - 150} 
-      //     ${windowWidth - 240} ${windowHeight / 2 - 200} 
-      //     S${windowWidth - 140} ${windowHeight / 2 - 250} 
-      //     ${windowWidth - 140} ${windowHeight / 2 - 400} 
-      //     V0 Z`,
-      //     ],
-      //   },
-      //   {
-      //     value: [
-      //       `M${windowWidth - 140} 0 
-      //     H0 V${windowHeight} 
-      //     H${windowWidth - 140} V${windowHeight / 2} 
-      //   C${windowWidth - 140} ${windowHeight / 2 - 150} 
-      //   ${windowWidth - 240} ${windowHeight / 2 - 150} 
-      //   ${windowWidth - 240} ${windowHeight / 2 - 200} 
-      //   S${windowWidth - 140} ${windowHeight / 2 - 250} 
-      //   ${windowWidth - 140} ${windowHeight / 2 - 400} 
-      //   V0 Z`,
-      //       `M${0} 0 
-      //   H0 V${windowHeight} 
-      //   H${0} V${windowHeight / 2} 
-      // C${10} ${windowHeight / 2 - 150} 
-      // ${40} ${windowHeight / 2 - 150} 
-      // ${40} ${windowHeight / 2 - 200} 
-      // S${10} ${windowHeight / 2 - 250} 
-      // ${10} ${windowHeight / 2 - 400} 
-      // V0 Z`,
-      //     ],
+      V0 Z`,
+          ],
         },
-        // {
-        //   value: `M${windowWidth - 10} 0 H0 V${windowHeight} H${
-        //     windowWidth - 10
-        //   } V${windowHeight / 2} C${windowWidth - 20} ${
-        //     windowHeight / 2 - 100
-        //   } ${windowWidth - 20} ${windowHeight / 2 - 150} ${windowWidth - 20} ${
-        //     windowHeight / 2 - 200
-        //   } S${windowWidth - 20} ${windowHeight / 2 - 250} ${
-        //     windowWidth - 20
-        //   } ${windowHeight / 2 - 300} V0 Z`,
-        // },
-        // {
-        //   value: `M${10} 0 H0 V${windowHeight} H${10} V${windowHeight / 2
-        //   } C10 ${
-        //     windowHeight / 2 - 100
-        //   } 10 ${windowHeight / 2 - 100} 10 ${windowHeight / 2 - 200} S10 ${
-        //     windowHeight / 2 - 250
-        //   } 10 ${windowHeight / 2 - 300} V0 Z`,
-        // },
       ],
       duration: 4000,
       easing: 'spring(3, 35, 10, 0)',
-      // complete: () => {
-      //         for (let i = 0; i < white.children.length; i++) {
-      //           white.children[i].style.display = 'none'
-      //         }
-      //         white.classList.toggle('top')
-      //         white.classList.toggle('bottom')
-      //         dark.classList.toggle('bottom')
-      //         dark.classList.toggle('top')
-      //         dark.classList.toggle('active')
-      //         white.classList.toggle('clip-right')
-      //         svgRight.style.display = 'none'
-      //         svgLeft.style.display = 'block'
-      //         clipRectRight.style.transform = 'translateX(0)'
-      //         lightTheme = false
-      // },
+      complete: () => {
+        for (let i = 0; i < white.children.length; i++) {
+          white.children[i].style.display = 'none'
+        }
+        white.classList.toggle('top')
+        white.classList.toggle('bottom')
+        dark.classList.toggle('bottom')
+        dark.classList.toggle('top')
+        dark.classList.toggle('active')
+        white.classList.toggle('clip-right')
+        svgRight.style.display = 'none'
+        svgLeft.style.display = 'block'
+        clipPathRight.style.transform = 'translateX(0)'
+        lightTheme = false
+      },
     })
   })
 

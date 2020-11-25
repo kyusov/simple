@@ -43,6 +43,11 @@
     @media screen and (max-width: 1440px) {
       width: 50%;
     }
+
+    @media screen and (max-width: 320px) {
+      width: 90%;
+      padding: 20px;
+    }
   }
 
   &__back {
@@ -62,6 +67,10 @@
 
     @media screen and (max-width: 1440px) {
       width: 50%;
+    }
+
+    @media screen and (max-width: 320px) {
+      width: 90%;
     }
   }
 
@@ -98,6 +107,16 @@
       &:last-child {
         transform: translate3d(-50%, -50%, 0) rotate(-45deg);
       }
+
+      @media screen and (max-width: 320px) {
+        width: 16px;
+        height: 2px;
+      }
+    }
+
+    @media screen and (max-width: 320px) {
+      width: 26px;
+      height: 26px;
     }
   }
 
@@ -106,6 +125,11 @@
     font-weight: 900;
     line-height: 38px;
     color: #333;
+
+    @media screen and (max-width: 320px) {
+      font-size: 16px;
+      line-height: 21px;
+    }
   }
 
   &__form {
@@ -173,6 +197,21 @@
         background-image: url('../pictures/check.svg');
       }
     }
+
+    @media screen and (max-width: 320px) {
+      input {
+        font-size: 16px;
+        line-height: 24px;
+
+        &:not(:first-child) {
+          margin-top: 15px;
+        }
+      }
+
+      label {
+        font-size: 10px;
+      }
+    }
   }
 
   &__button-wrapper {
@@ -220,6 +259,26 @@
         -webkit-transform: translate(5px, 10px);
         &::before {
           content: none;
+        }
+      }
+
+      @media screen and (max-width: 320px) {
+        font-size: 16px;
+        line-height: 19px;
+        padding: 11px 42px;
+        width: 100%;
+
+        &::before {
+          top: 3px;
+          left: 1px;
+        }
+
+        &:active {
+          transform: translate(3px, 5px);
+          -webkit-transform: translate(3px, 5px);
+          &::before {
+            content: none;
+          }
         }
       }
     }

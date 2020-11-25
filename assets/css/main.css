@@ -1805,7 +1805,7 @@
 }
 
 .elastic .svg-slider-left {
-  left: calc(-100% + 15px);
+  left: calc(-100% + 40px);
 }
 
 .elastic .clip-right {
@@ -1860,6 +1860,13 @@
   }
 }
 
+@media screen and (max-width: 320px) {
+  .modal__wrapper {
+    width: 90%;
+    padding: 20px;
+  }
+}
+
 .modal__back {
   position: absolute;
   width: 30%;
@@ -1878,6 +1885,12 @@
 @media screen and (max-width: 1440px) {
   .modal__back {
     width: 50%;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .modal__back {
+    width: 90%;
   }
 }
 
@@ -1918,11 +1931,32 @@
   transform: translate3d(-50%, -50%, 0) rotate(-45deg);
 }
 
+@media screen and (max-width: 320px) {
+  .modal__close span {
+    width: 16px;
+    height: 2px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .modal__close {
+    width: 26px;
+    height: 26px;
+  }
+}
+
 .modal__title {
   font-size: 34px;
   font-weight: 900;
   line-height: 38px;
   color: #333;
+}
+
+@media screen and (max-width: 320px) {
+  .modal__title {
+    font-size: 16px;
+    line-height: 21px;
+  }
 }
 
 .modal__form {
@@ -1990,6 +2024,19 @@
   background-image: url("../pictures/check.svg");
 }
 
+@media screen and (max-width: 320px) {
+  .modal__form input {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .modal__form input:not(:first-child) {
+    margin-top: 15px;
+  }
+  .modal__form label {
+    font-size: 10px;
+  }
+}
+
 .modal__button-wrapper {
   display: flex;
   justify-content: flex-end;
@@ -2037,6 +2084,26 @@
 
 .modal__button-wrapper button[type='submit']:active::before {
   content: none;
+}
+
+@media screen and (max-width: 320px) {
+  .modal__button-wrapper button[type='submit'] {
+    font-size: 16px;
+    line-height: 19px;
+    padding: 11px 42px;
+    width: 100%;
+  }
+  .modal__button-wrapper button[type='submit']::before {
+    top: 3px;
+    left: 1px;
+  }
+  .modal__button-wrapper button[type='submit']:active {
+    transform: translate(3px, 5px);
+    -webkit-transform: translate(3px, 5px);
+  }
+  .modal__button-wrapper button[type='submit']:active::before {
+    content: none;
+  }
 }
 
 .menu {
