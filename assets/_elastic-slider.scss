@@ -33,7 +33,7 @@
 
   .svg-slider-right,
   .svg-slider-left {
-    position: absolute;
+    position: fixed;
     z-index: 2;
     top: 0;
     width: 100%;
@@ -48,12 +48,12 @@
   .svg-slider-right {
     right: calc(-100% + 67px);
 
-    > g {
-      
-    }
-
     > rect {
       transform: translateX(60px);
+    }
+
+    @media screen and (max-width: 425px) {
+      right: calc(-100% + 40px);
     }
   }
 

@@ -1777,7 +1777,7 @@
 
 .elastic .svg-slider-right,
 .elastic .svg-slider-left {
-  position: absolute;
+  position: fixed;
   z-index: 2;
   top: 0;
   width: 100%;
@@ -1796,6 +1796,12 @@
 
 .elastic .svg-slider-right > rect {
   transform: translateX(60px);
+}
+
+@media screen and (max-width: 425px) {
+  .elastic .svg-slider-right {
+    right: calc(-100% + 40px);
+  }
 }
 
 .elastic .svg-slider-left {
