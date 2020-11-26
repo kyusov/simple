@@ -34,24 +34,18 @@
   .svg-slider-right,
   .svg-slider-left {
     position: fixed;
-    z-index: 2;
+    z-index: 5;
     top: 0;
-    width: 100%;
+    width: 50px;
     height: 100%;
-
-    rect {
-      width: 100%;
-      height: 100%;
-    }
   }
 
   .svg-slider-right {
-    right: calc(-100% + 67px);
-
-    > rect {
-      transform: translateX(60px);
+    right: 0;
+    path {
+      -webkit-transform: translateX(10px);
+      transform: translateX(10px);
     }
-
     @media screen and (max-width: 425px) {
       right: calc(-100% + 40px);
     }
